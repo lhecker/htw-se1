@@ -1,0 +1,137 @@
+\documentclass[fontsize=11pt,paper=a4,titlepage,twoside,openright,DIV=calc,draft=false]{scrbook}
+% 11pt: Normale Textkörpergröße
+% a4paper: Größe des Druckmediums
+% titlepage: Titel auf einer separaten Seite ohne Seitenzahl
+% twoside: Zweiseitiges Layout
+% openright: Kapitel beginnen immer auf der rechten Seite
+% headsepline: Trennt Textkörper von Headings durch Strich (entspr.: /footsepline)
+% headinclude,footinclude: Kopf- und Fußzeile zählen zum Textkörper
+% DIV=calc: Für die gewählten Optionen wird ein optimales Seitenverhältnis errechnet
+% draft=true: Für Bilder wird die Box freigehalten, erheblicher Geschwindigkeitsvorteil.
+% abstract: Setzt den Titel 'Zusammenfassung' vor den abstract
+
+\usepackage{blindtext} 
+\usepackage{upgreek}
+%\usepackage{subfigure}
+
+%  %  %  %  Bindungskorrektour  %  %  %  %
+\KOMAoptions{BCOR=15mm}  
+
+
+%  %  %  %  Abkürzungen  %  %  %  %
+% Das Einführen dieser Befehler verhindert Umbrüche bei mehrgliedrigen Abkürzungen
+\usepackage{xspace}
+\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+% Abkürzung für zum Beispiel
+
+
+%  %  %  %  Einheiten  %  %  %  %
+\usepackage[thinspace,thinqspace,squaren,textstyle]{SIunits}
+% Komfoatables Paket zum Einbinden von Einheiten
+
+
+%  %  %  %  Kodierung, Schrift und Sprache  %  %  %  % 
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage[ngerman]{babel}
+% damit man Text aus dem PDF korrekt rauskopieren kann
+
+
+%  %  %  %  Grafiken, Tabellen, Mathematikumgebungen  %  %  %  %
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\definecolor{halfgray}{gray}{0.55} 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{flafter,afterpage}
+\usepackage[section]{placeins}
+\usepackage{setspace} \onehalfspacing
+\usepackage[margin=8mm,font=small,labelfont=bf,format=plain]{caption}
+\usepackage[margin=8mm,font=small,labelfont=bf,format=plain]{subcaption}
+
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+
+%  %  %  %  Kopf- und Fußzeilen  %  %  %  %
+
+\renewcommand\frontmatter{\pagenumbering{Roman}}
+\usepackage{chngcntr} 
+\counterwithout{footnote}{chapter}
+  
+  
+% Zeilenabstand zwischen zwei Fußnoten:
+\footnotesep9pt
+% Einrücken der Fußnoten:
+\deffootnote[1.5em]{1em}{1.5em}{\thefootnotemark\ \ }
+
+\usepackage{fancyhdr}				% Paket für leicht konfigurierbare Kopf- und Fußzeilen
+\fancypagestyle{plain}{				% Neue Gestaltung der Chapter- Page
+\fancyhf{} 							% Clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}	% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
+\renewcommand{\footrulewidth}{0pt}}
+
+\fancypagestyle{myfoot}{			% Neue Gestaltung der frontmatter pages
+\fancyhf{}							% Clear all header and footer fields
+\fancyhead[RO]{\thepage}			% Seitenzahl außen auf ungeraden Seiten
+\fancyhead[LE]{\thepage}			% Seitenzahl außen auf geraden Seiten
+\renewcommand{\headrulerwidth}{0pt}	% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
+\renewcommand{\footrulerwidth}{0pt}}
+
+\pagestyle{fancy}					% Pagestyle fancy aktiviert selbstkonfigurierten Style
+\fancyhf{} 							% Alle Kopf- und Fußzeilenfelder werden zunächst bereinig
+\renewcommand{\headrulewidth}{0pt}	% Keine Trennlienie zwischen Kopfzeile und Textkörper
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+\fancyhead[RO]{\leftmark ~~~~ \thepage}
+\fancyhead[LE]{\thepage ~~~~ \nouppercase \rightmark}
+
+
+%  %  %  %  Überschriften  %  %  %  %
+
+
+%  %  %  %  Verzeichnisse  %  %  %  %
+
+% % % Literaturverzeichnis % % %
+%\usepackage{natbib}	
+
+% % % Inhaltsverzeichnis % % %
+% Die Chaptereinträge:
+\usepackage{titletoc}
+
+\titlecontents{chapter}
+				[0pc]
+				{\addvspace{0.5pc}%			
+				%\filouter}
+				}
+				{\sffamily\LARGE\thecontentslabel\quad\sffamily\LARGE}{}
+				{\titlerule*[0.75pc]{}\enskip\rmfamily\LARGE}%\contentspage}  % Wäre mit Seitenzahl 																					rechtsbündig
+				[\addvspace{.5pc}]
+
+% Die Sectioneinträge:
+\titlecontents{section}
+[3.78em]
+{}
+{\rmfamily\contentslabel{2.3em}\rmfamily}
+{\hspace*{-2.3em}}
+{\titlerule*[0.75pc]{.}\enskip\contentspage}
+[\addvspace{.1em}]
+
+% Die Subsectioneinträge:
+\titlecontents{subsection}
+[6.2em]
+{}
+{\rmfamily\contentslabel{2.3em}\rmfamily}
+{\hspace*{-2.3em}}
+{\titlerule*[0.75pc]{.}\enskip\contentspage}
+[\addvspace{.1em}]
+
+%\titlecontents{subsection}
+%[6.8em]
+%{}
+%{\rmfamily\normalsize\contentslabel{3em}\rmfamily\large}
+%{\hspace*{-2.3em}}
+%{\titlerule*[0.75pc]{.}\enskip\contentspage}

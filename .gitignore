@@ -12,3 +12,5 @@
 *.fls
 
 *.gz(busy)
+
+*.pdf

@@ -1,4 +1,4 @@
-\documentclass[fontsize=11pt,paper=a4,twoside,titlepage,DIV=calc,draft=false]{scrbook}
+\documentclass[fontsize=11pt,paper=a4,titlepage,DIV=calc,draft=false]{scrreprt}
 % 11pt: Normale Textkörpergröße
 % a4paper: Größe des Druckmediums
 % titlepage: Titel auf einer separaten Seite ohne Seitenzahl
@@ -14,7 +14,7 @@
 %\usepackage{subfigure}
 
 %  %  %  %  Bindungskorrektour  %  %  %  %
-\KOMAoptions{BCOR=10mm}  
+% \KOMAoptions{BCOR=10mm}  
 
 
 %  %  %  %  Abkürzungen  %  %  %  %
@@ -55,38 +55,38 @@
 
 %  %  %  %  Kopf- und Fußzeilen  %  %  %  %
 
-\renewcommand\frontmatter{\pagenumbering{Roman}}
+% \renewcommand\frontmatter{\pagenumbering{Roman}}
 \usepackage{chngcntr} 
 \counterwithout{footnote}{chapter}
   
   
 % Zeilenabstand zwischen zwei Fußnoten:
-\footnotesep9pt
+\footnotesep 9pt
 % Einrücken der Fußnoten:
 \deffootnote[1.5em]{1em}{1.5em}{\thefootnotemark\ \ }
-
-\usepackage{fancyhdr}				% Paket für leicht konfigurierbare Kopf- und Fußzeilen
-\fancypagestyle{plain}{				% Neue Gestaltung der Chapter- Page
-\fancyhf{} 							% Clear all header and footer fields
-\renewcommand{\headrulewidth}{0pt}	% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
-\renewcommand{\footrulewidth}{0pt}}
-
-\fancypagestyle{myfoot}{			% Neue Gestaltung der frontmatter pages
-\fancyhf{}							% Clear all header and footer fields
-\fancyhead[RO]{\thepage}			% Seitenzahl außen auf ungeraden Seiten
-\fancyhead[LE]{\thepage}			% Seitenzahl außen auf geraden Seiten
-\renewcommand{\headrulerwidth}{0pt}	% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
-\renewcommand{\footrulerwidth}{0pt}}
-
-\pagestyle{fancy}					% Pagestyle fancy aktiviert selbstkonfigurierten Style
-\fancyhf{} 							% Alle Kopf- und Fußzeilenfelder werden zunächst bereinig
-\renewcommand{\headrulewidth}{0pt}	% Keine Trennlienie zwischen Kopfzeile und Textkörper
-
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
-
-\fancyhead[RO]{\leftmark ~~~~ \thepage}
-\fancyhead[LE]{\thepage ~~~~ \nouppercase \rightmark}
+%
+%\usepackage{fancyhdr}				% Paket für leicht konfigurierbare Kopf- und Fußzeilen
+%\fancypagestyle{plain}{				% Neue Gestaltung der Chapter- Page
+%\fancyhf{} 							% Clear all header and footer fields
+%\renewcommand{\headrulewidth}{0pt}		% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
+%\renewcommand{\footrulewidth}{0pt}}
+%
+%\fancypagestyle{myfoot}{				% Neue Gestaltung der frontmatter pages
+%\fancyhf{}							% Clear all header and footer fields
+%\fancyhead[RO]{\thepage}				% Seitenzahl außen auf ungeraden Seiten
+%\fancyhead[LE]{\thepage}				% Seitenzahl außen auf geraden Seiten
+%\renewcommand{\headrulerwidth}{0pt}	% Keine Trennlinie zwischen Kopf- / Fußzeile und Textkörper
+%\renewcommand{\footrulerwidth}{0pt}}
+%
+%\pagestyle{fancy}					% Pagestyle fancy aktiviert selbstkonfigurierten Style
+%\fancyhf{} 							% Alle Kopf- und Fußzeilenfelder werden zunächst bereinig
+%\renewcommand{\headrulewidth}{0pt}		% Keine Trennlienie zwischen Kopfzeile und Textkörper
+%
+%%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+%
+%\fancyhead[RO]{\leftmark ~~~~ \thepage}
+%\fancyhead[LE]{\thepage ~~~~ \nouppercase \rightmark}
 
 
 %  %  %  %  Überschriften  %  %  %  %
@@ -106,8 +106,8 @@
 				{\addvspace{0.5pc}%			
 				%\filouter}
 				}
-				{\sffamily\LARGE\thecontentslabel\quad\sffamily\LARGE}{}
-				{\titlerule*[0.75pc]{}\enskip\rmfamily\LARGE}%\contentspage}  % Wäre mit Seitenzahl 																					rechtsbündig
+				{\sffamily\Large\thecontentslabel\quad\sffamily\Large}{}
+				{\titlerule*[0.75pc]{}\enskip\rmfamily\Large \contentspage}  % Wäre mit Seitenzahl 																					rechtsbündig
 				[\addvspace{.5pc}]
 
 % Die Sectioneinträge:

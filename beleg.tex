@@ -2,8 +2,6 @@
 \input{header_beleg}
 \begin{document}
 
-\frontmatter
-
 %  %  %  %  Titelseite  %  %  %  %
 \begin{titlepage}
 	\begin{tabularx}{\linewidth}{X}		
@@ -41,9 +39,8 @@
 		\vspace{2em}
 		
 		\\ \\ \hline
-
- 	\end{tabularx}
- \end{titlepage}
+	\end{tabularx}
+\end{titlepage}
 
 %  %  %  %  Inhaltsverzeichnis  %  %  %  %
 
@@ -53,13 +50,59 @@
 \mainmatter
 
 \chapter{Einführung}
-Todo: Tom
+Das Unternehmen \textsc{EKS}\footnote{Abkürzung für Entwicklung von kundenspezifischer Software} evaluiert aktuell die Umstellung ihres Arbeitszeitmodells zur Gleitzeit. Die Erfassung und Auswertung der Arbeitszeit soll dabei durch ein Software-System unterstützt werden. Die vorliegende Anforderungsanalyse beschäftigt sich zunächst mit den Rahmenbedingung und den Funktionen, die vom System übernommen werden sollen. Neben der Zusammenfassung aller funktionalen Anforderungen und der Struktur der Eigangs- und Ausgangsdaten, enthält diese Analyse verschiedene Anwendungsfalldiagramme, sowie ein Entity Relationship Model, welches die Speicherung der Daten veranschaulicht.
+
 \chapter{Dokumentation der Anforderungen}
-Todo: Tom
-\chapter{Überblick über funktionale Anforderungen}
-Todo: Tom
-\chapter{Struktur der Eingangs- und Ausgangdaten}
-Todo: Tom
+Anforderungen an ein Software-Produkt werden im Allgemeinen zunächst in funktionale und nicht-funktionale Anforderungen unterteilt. Erstere decken dabei die Fähigkeiten und die Beschaffenheiten ab, die der Benutzer der Software zur Problemlösung oder zur Erreichung seines Zieles benötigt. Nicht-funktionale Anforderungen unterteilen sich weiterhin in Rahmenbedingungen und Qualitätsanforderungen.
+
+\section{Funktionale Anforderungen}
+Zunächst nur als Liste:
+\begin{itemize}
+	\item \textbf{Anwesenheit erfassen}
+	\begin{itemize}
+		\item Betreten und Verlassen wird mit MA-ID \"uber ein Ger\"at gespeichert
+		\item Zwischen 22:00 und 6:00 Uhr erfolgt st\"undlich eine Email an den Wachdienst \"uber Personen im Firmengeb\"aude
+	\end{itemize}
+	
+	\item \textbf{Urlaub planen}
+	\begin{itemize}
+		\item Mitarbeiter beantragen Urlaub unter Verwendung der MA-ID
+		\item Anzeige der pers\"onlichen Urlaubsinformationen (Status, verbrauchte und verbleibende Tage)
+		\item Mitarbeiter kann Urlaubsantr\"age stornieren (offene, abgelehnte, noch nicht angetretene)
+		\item Mitarbeiter kann Urlaubsvorschl\"age annehmen oder ablehnen
+		\item Abteilungsleiter kann Urlaubsantr\"age genehmigen
+		\item Abteilungsleiter kann Urlaubsantr\"age ablehnen
+		\item Abteilungsleiter kann Alternativen vorschlagen
+		\item Abteilungsleiter kann Urlaubsinformationen zu einem seiner MA anzeigen lassen
+	\end{itemize}
+	
+	\item \textbf{Krankheitsdaten erfassen}
+	\begin{itemize}
+		\item	 Sachbearbeiter (HR) erfassen Krankmeldungen der MA
+		\item Bei Krankmeldung korrigiert SW-System automatisch Urlaubsdaten
+	\end{itemize}
+	
+	\item \textbf{Anwesenheit auswerten}
+	\begin{itemize}
+		\item Detaillierte Arbeitszeitauswertung f. MA am Ende der Woche (Email)
+	\end{itemize}
+	
+	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter}
+	\begin{itemize}
+		\item Abteilungsleiter kann Gesamtbilanz f\"ur seine Abteilung anfordern
+		\item Abteilungsleiter kann Urlaubszeitbilanz f\"ur seine Abteilung anfordern
+		\item Abteilungsleiter kann Anwesenheitsliste f\"ur seine Abteilung anfordern
+	\end{itemize}
+\end{itemize}
+
+\subsection{Tabelle}
+
+\subsection{Struktur der Eingangs- und Ausgangedaten}
+
+\section{Qualit\"atsanforderungen}
+
+\section{Rahmenbedingungen}
+
 \chapter{Kontextdiagramm}
 Todo: Markus
 \chapter{Anwendungsfalldiagramme}
@@ -74,8 +117,6 @@ Todo: Markus
 Todo: Leonard
 \chapter{Entity Relationship Model}
 Todo: Leonard
-\chapter{Glossar}
-Todo: Tom
 
 %  %  %  %  Literaturverzeichnis  %  %  %  %
 % \bibliographystyle{unsrt}

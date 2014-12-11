@@ -12,3 +12,14 @@
 *.fls
 
 *.gz(busy)
+<<<<<<< HEAD
+=======
+
+*.pdf
+
+*.pdf
+
+beleg.pdf
+
+*.pdf
+>>>>>>> tom-init

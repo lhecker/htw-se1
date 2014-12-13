@@ -257,20 +257,22 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 		\textbf{Struktur der Ausgangsdaten} \\
 	\hline \hline
 		\textit{Betreten} &
-		MA-ID des jeweiligen Mitarbeiters und Uhrzeit des Betretens &
-		Best\"atigung des Zutritts und Speicherung von MA-ID und Uhrzeit in der ent\ssprechenden Datenbank, alternative Mitteilung der Verweigerung des Zugangs \\
+		+ MA-ID \newline + Uhrzeit &
+		Best\"atigung des Zutritts und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
 	\hline
 		\textit{Verlassen} &
-		&
-		\\
+		+ MA-ID \newline + Uhrzeit &
+		Best\"atigung des Verlassen und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
 	\hline
 		\textit{Wachdienst \newline informieren} &
-		&
-		\\
+		St\"undlicher Trigger zum Ausl\"osen der Benachrichtigung&
+		Detaillierte Mitarbeiterliste mit den Spalten \{MA-ID, Nachname, Vorname, B\"uro\} \\
 	\hline 
 \end{tabular}
 }
 
+\newpage
+\thispagestyle{empty}
 {
 \vspace{0.7cm}
 \hspace{-2cm}
@@ -282,20 +284,20 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 		\textbf{Struktur der Ausgangsdaten} \\
 	\hline \hline		
 	\textit{Urlaub beantragen} &
-		&
-		\\
+		Urlaubswunsch := \{MA-ID, Liste: zu beantragende Urlaubstage\}&
+		Urlaubsantrag :-= \{MA-ID, Nachname, Vorname, Liste: zu beantragende Urlaubstage\}\\
 	\hline
 		\textit{Urlaubsinformationen anzeigen} &
-		&
-		\\
+		Wunsch nach Urlaubsinformationen &
+		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline		
 		\textit{Urlaubsantrag \newline stornieren} &
-		&
-		\\
+		Wunsch nach Antragsstornierung &
+		Best\"atigung der Stornierung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsvorschlag \newline annehmen} &
-		&
-		\\
+		Urlaubsvorschlag := \{MA-ID, Liste: vorgeschlagener Urlaubstage \}&
+		Best\"atigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsvorschlag \newline stornieren} &
 		&
@@ -323,22 +325,23 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 	\hline \hline
 		\textit{Anwesenheit \newline auswerten} &
 		Arbeitsstunden, Urlaubstage und Krankmeldungen des Mitarbeiters&
-		Detaillierte Arbeitszeitauswertung := \{Soll-Arbeitszeit, Ist-Arbeitszeit, Stand des Arbeitszeitkontos \} \\
+		Detaillierte Arbeitszeitauswertung :=\{Soll-Arbeitszeit, Ist-Arbeitszeit, Stand des Arbeitszeitkontos \} \\
 	\hline \hline
 		\textit{Gesamtbilanz \newline anfordern} &
-		&
-		\\
+		Wunsch nach Gesamtbilanz &
+		Gesamtbilanz zu Abteilung :=\{Sollarbeitszeit, tats\"achliche Arbeitsstunden, Urlaubstage, Krankheitstage, \"Uberstunden\}\\
 	\hline
 		\textit{Urlaubsbilanz \newline anfordern} &
-		&
-		\\
+		Wunsch nach Urlaubsbilanz&
+		Urlaubsbilanz der Abteilung :=\{beantragte Urlaubstage (absolut und prozentual bezogen auf Gesamtarbeitszeit)\}\\
 	\hline
-		\textit{Anwensenheitsliste \newline anfordern} &
-		&
-		\\
+		\textit{Anwesenheitsliste \newline anfordern} &
+		Wunsch nach Anwesenheitsliste &
+		Anwesenheitsliste der Abteilung :=\{MA-ID, Nachname, Vorname, Arbeitsplatz\} \\
 	\hline
 \end{tabular}
 }
+
 
 \newpage
 \section{Qualit\"atsanforderungen}
@@ -350,16 +353,19 @@ F\"ur die sp\"atere Erweiterung oder Wartung der Software ist es au{\ss}erdem vo
  
 Geht man etwas ins Detail und betrachtet die essentiellen Funktionen, so gibt es Punkte an denen die Benutzerfreundlichkeit deutlich verbessert werden kann. Empfohlen w\"aren unter anderem \textit{Interaktionen mit der Software zu best\"atigen}. Gemeint ist damit, dem Benutzer R\"uckmeldung zu erfolgreich oder nicht erfolgreich abgeschlossenen Interaktionen zu geben. \newline
 
-Weitere vorstellbare Qualit\"atsanforderungen werden nach 
-\section{Rahmenbedingungen}
+Weitere vorstellbare Qualit\"atsanforderungen werden nach Bedarf mit dem Auftraggeber abgesprochen.
 
-\begin{itemize}
-	\item Arbeitstag  =  8 Stunden
-	\item Arbeitswoche = 40 Stunden
-	\item Das SW-System hat Zugriff auf den betriebsinternen Kalender
-	\item Krankmeldungen korrigieren die Urlaubsinformationen automatisch
-	\item Das Arbeitszeitkonto von Begin des Arbeitsverh\"altnisses an kumulativ gef\"uhrt 
-\end{itemize}
+\newpage
+\section{Rahmenbedingungen}
+Als abschlie{\ss}ender Punkt der schriftlichen Formulierung der Anforderungen werden die Rahmenbedingungen festgehalten. Hierbei unterscheidet man zwischen \textit{technologischen}, \textit{rechtlichen} und \textit{organisatorischen Rahmenbedingungen}. \newline
+
+Zu den \textit{technischen Rahmenbedingungen} geh\"ort dabei, dass das System Zugriff auf den betriebsinternen Jahreskalender ben\"otigt. Dies ist notwendig, um Feiertage und Betriebsruhetage automatisch in die Bilanz der Arbeitszeit\-konten einbeziehen zu k\"onnen. Weiterhin sollen Urlaubstage und Krankmeldungen unmittelbar in die Bilanz einflie{\ss}en.  \newline
+
+Wichtigster Teil der \textit{rechtlichen Rahmenbedingungen} ist zweifelsohne das Thema Datensicherheit. Die Vollst\"andigkeit und Integrit\"at der personenbezogenen Daten muss zu jedem Zeitpunkt gew\"ahrleistet sein. Dies ist notwendig um Rechtssicherheit zu schaffen, f\"ur den Arbeitgeber und den Arbeitnehmer.  \newline
+
+Die \textit{organisatorischen Rahmenbedingungen} beinhalten vor allem Details zu den Arbeitszeitmodellen im Unternehmen. So besitzt ein Standard-Arbeitstag 8 Stunden und eine Arbeitswoche dementsprechenden 40 Stunden. Das Arbeitszeitkonto eines jeden Mitarbeiters wird dabei vom Beginn des Arbeitsverh\"altnisses an kumulativ gef\"uhrt.  
+
+\newpage
 
 \chapter{Kontextdiagramm}
 Todo: Markus

@@ -39,14 +39,9 @@
 		\vspace{2em}
 		
 		\\ \\ \hline
-<<<<<<< HEAD
-
- 	\end{tabularx}
- \end{titlepage}
-=======
+		
 	\end{tabularx}
 \end{titlepage}
->>>>>>> tom-init
 
 %  %  %  %  Inhaltsverzeichnis  %  %  %  %
 
@@ -56,66 +51,29 @@
 \mainmatter
 
 \chapter{Einführung}
-<<<<<<< HEAD
-Todo: Tom
-\chapter{Dokumentation der Anforderungen}
-Todo: Tom
-\chapter{Überblick über funktionale Anforderungen}
-Todo: Tom
-\chapter{Struktur der Eingangs- und Ausgangdaten}
-Todo: Tom
-=======
 Das Unternehmen \textsc{EKS}\footnote{Abkürzung für \textsc{Entwicklung von kundenspezifischer Software}} evaluiert aktuell die Umstellung ihres Arbeitszeitmodells zur Gleitzeit. Die Erfassung und Auswertung der Arbeitszeit soll dabei durch ein Software-System unterstützt werden. Die vorliegende Anforderungsanalyse beschäftigt sich zunächst mit den Rahmenbedingung und den Funktionen, die vom System übernommen werden sollen. Neben der Zusammenfassung aller funktionalen Anforderungen und der Struktur der Eigangs- und Ausgangsdaten, enthält diese Analyse verschiedene Anwendungsfalldiagramme\footnote{Als Abk\"urzung wird im folgenden \textsc{AWD} verwendet. Daran angelehnt ist die Abk\"urzung \textsc{AWF} f\"ur einen Anwendungsfall}, sowie ein Entity Relationship Model, welches die Speicherung der Daten veranschaulicht.
 
 \chapter{Dokumentation der Anforderungen}
 Anforderungen an ein Software-Produkt werden im Allgemeinen zunächst in funktionale und nicht-funktionale Anforderungen unterteilt. Erstere decken dabei die Fähigkeiten und die Beschaffenheiten ab, die der Benutzer der Software zur Problemlösung oder zur Erreichung seines Zieles benötigt. Nicht-funktionale Anforderungen unterteilen sich weiterhin in Rahmenbedingungen und Qualitätsanforderungen.
 
 \section{Funktionale Anforderungen}
-Zunächst nur als Liste:
+Die folgende Auflistung enth\"alt die groben Funktionen, die vom Software-System erf\"ullt werden sollen. Bei einigen handelt es sich dabei um \textit{abstrakte Funktionen}, welche sich im weiteren Verlauf der Analyse feiner aufgliedern werden.
+
 \begin{itemize}
-	\item \textbf{Anwesenheit erfassen}
-	\begin{itemize}
-		\item Betreten und Verlassen wird mit MA-ID \"uber ein Ger\"at gespeichert
-		\item Zwischen 22:00 und 6:00 Uhr erfolgt st\"undlich eine Email an den Wachdienst \"uber Personen im Firmengeb\"aude
-	\end{itemize}
-	
-	\item \textbf{Urlaub planen}
-	\begin{itemize}
-		\item Mitarbeiter beantragen Urlaub unter Verwendung der MA-ID
-		\item Anzeige der pers\"onlichen Urlaubsinformationen (Status, verbrauchte und verbleibende Tage)
-		\item Mitarbeiter kann Urlaubsantr\"age stornieren (offene, abgelehnte, noch nicht angetretene)
-		\item Mitarbeiter kann Urlaubsvorschl\"age annehmen oder ablehnen
-		\item Abteilungsleiter kann Urlaubsantr\"age genehmigen
-		\item Abteilungsleiter kann Urlaubsantr\"age ablehnen
-		\item Abteilungsleiter kann Alternativen vorschlagen
-		\item Abteilungsleiter kann Urlaubsinformationen zu einem seiner MA anzeigen lassen
-	\end{itemize}
-	
+	\item \textbf{Anwesenheit erfassen} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
+	\item \textbf{Urlaub planen - Mitarbeiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
+	\item \textbf{Urlaub planen - Abteilungsleiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
 	\item \textbf{Krankheitsdaten erfassen}
-	\begin{itemize}
-		\item	 Sachbearbeiter (HR) erfassen Krankmeldungen der MA
-		\item Bei Krankmeldung korrigiert SW-System automatisch Urlaubsdaten
-	\end{itemize}
-	
 	\item \textbf{Anwesenheit auswerten}
-	\begin{itemize}
-		\item Detaillierte Arbeitszeitauswertung f. MA am Ende der Woche (Email)
-	\end{itemize}
-	
-	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter}
-	\begin{itemize}
-		\item Abteilungsleiter kann Gesamtbilanz f\"ur seine Abteilung anfordern
-		\item Abteilungsleiter kann Urlaubszeitbilanz f\"ur seine Abteilung anfordern
-		\item Abteilungsleiter kann Anwesenheitsliste f\"ur seine Abteilung anfordern
-	\end{itemize}
+	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
 \end{itemize}
 
 \subsection{Tabellarischer \"Uberblick}
-Die folgende Tabelle fast nun alle voneinander unabh\"angigen funktionalen Anforderungen an das Software-System zusammen.  Im Rahmen der Anforderungsanalyse verwendet man f\"ur unabh\"angige funktionale Anforderungen ebenfalls den Begriff  \textit{essentielle Funktionen}.
+Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen Anforderungen an das Software-System zusammen.  Im Rahmen der Anforderungsanalyse verwendet man f\"ur unabh\"angige funktionale Anforderungen ebenfalls den Begriff  \textit{essentielle Funktionen}.
 
-\vspace{0,5cm}
-\hspace{-3,5cm}
 {
+\vspace{1cm}
+\hspace{-3,5cm}
 \footnotesize
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
 	\hline
@@ -125,85 +83,137 @@ Die folgende Tabelle fast nun alle voneinander unabh\"angigen funktionalen Anfor
 		\textbf{Bemerkungen}	&
 		\textbf{abstrakter AWD} \\
 	\hline \hline 
-		Betreten &
+		\textit{Betreten} &
 		MA-ID und Uhrzeit &
 		Zutritt und Speicherung der Zeit, alternativ Zutrittsverweigerung & 
 		Bei einer ung\"ultigen MA-ID kann der Zutritt verweigert werden &  
 		\textbf{Anwesenheit erfassen} \\
 	\cline{1-4}
-		Verlassen & 
+		\textit{Verlassen} & 
 		MA-ID und Uhrzeit & 
-		Verlassen und Speicherung der Zeit &
+		Verlassen und Speicherung der Zeit, alternative Fehlermeldung &
 		Bei einer ung\"ultigen MA-ID kann der Zutritt verweigert werden & 
 		\\
+	\cline{1-4}
+		\textit{Wachdienst \mbox{informieren}} &
+		Mitarbeiterliste &
+		Detaillierte Information an den Wachdienst &
+		Der Wachdienst wird st\"undlich dar\"uber informiert, welche Mitarbeiter sich im Geb\"aude befinden &
+		\\
 	\hline
-		Urlaub beantragen & 
+\end{tabular}
+}
+
+{
+\vspace{0,5cm}
+\hspace{-3,5cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
+	\hline
+		\textit{Urlaub beantragen} & 
 		Urlaubswunsch & 
 		Urlaubsantrag & 
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt & 
-		\textbf{Urlaub  \newline planen} \\
+		\textbf{Urlaub \newline planen, \newline  Mitarbeiter } \\
 	\cline{1-4}
-		Urlaubsinformationen anzeigen & 
+		\textit{Urlaubsinformationen anzeigen} & 
 		Wunsch nach Urlaubsinformationen & 
-		Informationen zu Urlaubsterminen, Beantragungsstatus, verbrauchten und verbleibenden Urlaubstagen &  
+		Informationen zu Urlaubsterminen, Beantragungs\-status, verbrauchten und verbleibenden Urlaubstagen &  
 		&  
 		\\
 	\cline{1-4}
-		Urlaubsantrag stornieren &
+		\textit{Urlaubsantrag \newline stornieren} &
 		Storno-Wunsche &
 		Storno-Best\"atigung mit Aktualisierung der Urlaubsdaten &
 		MA kann offene, abgelehnte und genehmigte (noch nicht angetretene) Urlaubsantr\"age stornieren &
 		\\
 	\cline{1-4}
-		Urlaubsvorschlag annehmen (MA) &
+		\textit{Urlaubsvorschlag annehmen} &
 		Urlaubsvorschlag des Abteilungsleiter &
 		 Aktualisierung der Urlaubsinformationen &
 		Abteilungsleiter k\"onnen MAs ihrer Abt. Vorschl\"age unterbreiten &
 		\\
 	\cline{1-4}
-		Urlaubsvorschlag stornieren (MA) &
+		\textit{Urlaubsvorschlag \newline stornieren} &
 		Urlaubsvorschlag des Abteilungsleiter und Storno-Wunsch &
 		Stornierungsmitteilung und Aktualisierung der Urlaubsinformationen &
 		Abteilungsleiter k\"onnen MAs ihrer Abt. Vorschl\"age unterbreiten &
 		\\
-	\cline{1-4}
-		Urlaubsantrag genehmigen &
-		Urlaubsantrag eines MA &
-		Aktualisierung der Urlaubsdaten &
-		Abteilungsleiter m\"ussen Antr\"age ihrer MA genehmigen &
-		\\
-	\cline{1-4}
-		Urlaubsantrag ablehnen &
-		Urlaubsantrag eines MA &
-		Aktualisierung der Urlaubsdaten &
-		Abteilungsleiter k\"onnen Antr\"age ihrer MA ablehnen &
-		\\
-	\cline{1-4}
-		Vorschlag unterbreiten &
-		Urlaubsvorschlag des Abteilungsleiters &
-		Urlaubsvorschlag an MA und Aktualisierung der Urlaubsinformationen &
-		Abteilungsleiter k\"onnen MAs Urlaubsvorschl\"age unterbreiten &
-		\\
-	\cline{1-4}
-		Urlaubsinformationen der Abteilung anzeigen lassen &
-		Wunsch d. Abteilungsleiters nach Urlaubsinformationen seiner Abteilung &
-		Detaillierte Informationen zur Abteilung &
-		Abteilungsleiter k\"onnen sich zur Entscheidungsunterst\"utzung die Urlaubsinformationen ihrer Abteilung anzeigen lassen &
-		\\
 	\hline
-		Krankmeldung erfassen &
-		Krankenschein eines MA &
-		Aktualisierung der Urlaubsinformationen &
-		Sachbearbeiterin (HR) erfasst Krankmeldungen von MAs, betroffene Urlaubsinformationen werden sofort aktualisiert &
-		 \\
-	\hline
-	
 \end{tabular}
 }
 
-
+{
 \hspace{-3,5cm}
-{\footnotesize
+\footnotesize
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
+	\hline 
+		\textbf{Funktion	} &	
+		\textbf{Eingangsdaten} &
+		\textbf{Ausgangsdaten}& 
+		\textbf{Bemerkungen}	&
+		\textbf{abstrakter AWD} \\
+	\hline \hline 
+		\textit{Urlaubsantrag \newline genehmigen} &
+		Urlaubsantrag eines MA &
+		Aktualisierung der Urlaubsdaten und Best\"atigung &
+		Abteilungsleiter m\"ussen Antr\"age ihrer Mitarbeiter genehmigen &
+		\textbf{Urlaub \newline planen, \newline  Abt.-Leiter } \\
+	\cline{1-4}
+		\textit{Urlaubsantrag \newline ablehnen} &
+		Urlaubsantrag eines MA &
+		Aktualisierung der Urlaubsdaten und Absage&
+		Abteilungsleiter k\"onnen Antr\"age ihrer Mitarbeiter ablehnen &
+		\\
+	\cline{1-4}
+		\textit{Vorschlag \newline unterbreiten} &
+		Urlaubsvorschlag des Abteilungsleiters &
+		Urlaubsvorschlag an Mitarbeiter und Aktualisierung der Urlaubsinformationen &
+		Abteilungsleiter k\"onnen Mitarbeitern Urlaubsvorschl\"age unterbreiten &
+		\\
+	\cline{1-4}
+		\textit{Urlaubsinformationen der Abteilung an\-zeigen lassen} &
+		Wunsch des Abteilungsleiters nach Urlaubsinformationen seiner Abteilung &
+		Detaillierte Informationen zur Abteilung &
+		Abteilungsleiter k\"onnen sich zur Entscheidungs\-unterst\"utzung die Urlaubs\-informationen ihrer Abteilung anzeigen lassen &
+		\\
+	\hline
+\end{tabular}
+}
+
+{
+\vspace{0,5cm}
+\hspace{-3,5cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
+	\hline 
+		\textit{Krankmeldung \newline erfassen} &
+		Krankenschein eines Mitarbeiters &
+		Aktualisierung der Urlaubsinformationen &
+		Sachbearbeiter (HR) erfasst Krankmeldungen von Mitarbeitern und betroffene Urlaubsinformationen werden sofort aktualisiert &
+		 \\
+	\hline	
+\end{tabular}
+}
+
+{
+\vspace{0,5cm}
+\hspace{-3,5cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
+	\hline 
+		\textit{Anwesenheit \newline auswerten} &
+		Anwesenheitsinformationen eines Mitarbeiters &
+		Detaillierte Arbeitszeit\-aus\-wertung  des Mitarbeiters &
+		Die Auswertung wird w\"ochentlich automatisch erstellt und dem Mitarbeiter per Email zugesandt &
+		 \\
+	\hline	
+\end{tabular}
+}
+
+{
+\hspace{-3,5cm}
+\footnotesize
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
 	\hline
 		\textbf{Funktion	} &	
@@ -212,36 +222,31 @@ Die folgende Tabelle fast nun alle voneinander unabh\"angigen funktionalen Anfor
 		\textbf{Bemerkungen}	&
 		\textbf{abstrakter AWD} \\
 	\hline \hline 
-		Gesamtbilanz anfordern (Abteilungsleiter) &
+		\textit{Gesamtbilanz \newline anfordern} &
 		Wunsch nach Gesamtbilanz &
-		Gesamtbilanz enth\"alt Aussagen zur Sollarbeitszeit der Abteilung, zu tats\"achlichen Arbeitsstunden, Urlaubstagen, Krankheitstagen und \"Uberstunden.  &
-		Die Kennzahlen sind absolut und beziehen sich auf die Sollarbeitszeit (=100\%) prozentual anzugeben. Die Gesamtbilanz betrifft einen beliebigen, abgelaufenen Zeitraum &
-		\textbf{Zeitauswertung fur Abteilungsleiter}\\
+		Gesamtbilanz enth\"alt detaillierte Informationen zur Arbeits\-zeit\-auswertung der Abteilung &
+		Die Kennzahlen sind absolut und prozentual angegeben und betreffen einen beliebigen, abgelaufenen Zeitraum &
+		\textbf{Zeitaus\-wertung f\"ur Abt.-Leiter}\\
 	\cline{1-4}
-		Urlaubszeitbilanz anfordern (Abteilungsleiter) &
+		\textit{Urlaubszeitbilanz \newline anfordern} &
 		Wunsch nach Urlaubsbilanz &
 		Urlaubszeitbilanz ente\"alt beantragte Urlaubstage der Abteilung in einem vorausschauenden Zeitraum &
 		Antr\"age werden absolut und prozentual bezogen auf die Gesamtarbeitszeit dargestellt &
 		\\ 
 	\cline{1-4}
-		Anwesenheitsliste anfordern (Abteilungsleiter) &
+		\textit{Anwesenheitsliste \newline anfordern}&
 		Wunsch nach Anwesenheitsliste &
 		Liste enth\"alt alle momentan anwesenden Mitarbeiter der eigenen Abteilung &
 		&
 		\\
 	\hline
-	
 \end{tabular}
 }
 
 \subsection{Struktur der Eingangs- und Ausgangedaten}
 Todo: Tom
 \section{Qualit\"atsanforderungen}
-\begin{itemize}
-\item \Large
-These: Im Text werden keine Qualit\"atsanforderungen genannt, werde interne, noch externe! 
-\end{itemize}
-\newpage
+
 \section{Rahmenbedingungen}
 
 \begin{itemize}
@@ -249,13 +254,9 @@ These: Im Text werden keine Qualit\"atsanforderungen genannt, werde interne, noc
 	\item Arbeitswoche = 40 Stunden
 	\item Das SW-System hat Zugriff auf den betriebsinternen Kalender
 	\item Krankmeldungen korrigieren die Urlaubsinformationen automatisch
-	\item zwischen 22:00 und 6:00 Uhr wird automatisch eine Email an den Wachdienst versendet, die dar\"uber aufkl\"art, welche Mitarbeiter aktuell auf dem Firmengel\"ande sind
-	\item Am Ende jeder Woche bekommen alle Mitarbeiter eine detaillierte Arbeitszeitauswertung per Email zugesandt
 	\item Das Arbeitszeitkonto von Begin des Arbeitsverh\"altnisses an kumulativ gef\"uhrt 
 \end{itemize}
 
-
->>>>>>> tom-init
 \chapter{Kontextdiagramm}
 Todo: Markus
 \chapter{Anwendungsfalldiagramme}
@@ -270,17 +271,21 @@ Todo: Markus
 Todo: Leonard
 \chapter{Entity Relationship Model}
 Todo: Leonard
-<<<<<<< HEAD
 \chapter{Glossar}
-Todo: Tom
-=======
->>>>>>> tom-init
+Todo: Tom und Markus und Leonard 
 
-%  %  %  %  Literaturverzeichnis  %  %  %  %
-% \bibliographystyle{unsrt}
-% \bibliography{Literatur.bib}
+\begin{itemize}
+	\item Anwendungsfall
+	\item Anwendungsfalldiagramm
+	\item abstrakte Funktion
+	\item essentielle Funktion
+	\item Entity Relationship Model
+	\item Unified Modeling Language
+	\item Mitarbeiter-ID
+	\item t.b.c
+	\item
+	\item 
+\end{itemize}
 
-\clearpage
-\thispagestyle{empty}
 
 \end{document}

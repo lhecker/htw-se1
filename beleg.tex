@@ -60,13 +60,13 @@ Anforderungen an ein Software-Produkt werden im Allgemeinen zunächst in funktio
 Die folgende Auflistung enth\"alt die groben Funktionen, die vom Software-System erf\"ullt werden sollen. Bei einigen handelt es sich dabei um \textit{abstrakte Funktionen}, welche sich im weiteren Verlauf der Analyse feiner aufgliedern werden.
 
 \begin{itemize}
-	\item \textbf{Anwesenheit erfassen} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
-	\item \textbf{Urlaub planen - Mitarbeiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
-	\item \textbf{Urlaub planen - Abteilungsleiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
+	\item \textbf{Anwesenheit erfassen} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+	\item \textbf{Urlaub verwalten - Mitarbeiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+	\item \textbf{Urlaub planen - Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
 	\item \textbf{Krankheitsdaten erfassen}
 	\item \textbf{Anwesenheit auswerten}
-	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter} \textit{\textless \textless \ abstrakt \ \textgreater \textgreater}
-\end{itemize}
+	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+\end{itemize} 
 
 \subsection{Tabellarischer \"Uberblick}
 Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen Anforderungen an das Software-System zusammen.  Im Rahmen der Anforderungsanalyse verwendet man f\"ur unabh\"angige funktionale Anforderungen ebenfalls den Begriff  \textit{essentielle Funktionen}.
@@ -92,7 +92,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		\textit{Verlassen} & 
 		MA-ID und Uhrzeit & 
 		Verlassen und Speicherung der Zeit, alternative Fehlermeldung &
-		Bei einer ung\"ultigen MA-ID kann der Zutritt verweigert werden & 
+		& 
 		\\
 	\cline{1-4}
 		\textit{Wachdienst \mbox{informieren}} &
@@ -114,7 +114,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Urlaubswunsch & 
 		Urlaubsantrag & 
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt & 
-		\textbf{Urlaub \newline planen, \newline  Mitarbeiter } \\
+		\textbf{Urlaub \newline verwalten, \newline  Mitarbeiter } \\
 	\cline{1-4}
 		\textit{Urlaubsinformationen anzeigen} & 
 		Wunsch nach Urlaubsinformationen & 
@@ -125,19 +125,19 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		\textit{Urlaubsantrag \newline stornieren} &
 		Storno-Wunsche &
 		Storno-Best\"atigung mit Aktualisierung der Urlaubsdaten &
-		MA kann offene, abgelehnte und genehmigte (noch nicht angetretene) Urlaubsantr\"age stornieren &
+		Mitarbeiter kann offene, abgelehnte und genehmigte (noch nicht angetretene) Urlaubsantr\"age stornieren &
 		\\
 	\cline{1-4}
 		\textit{Urlaubsvorschlag annehmen} &
 		Urlaubsvorschlag des Abteilungsleiter &
 		 Aktualisierung der Urlaubsinformationen &
-		Abteilungsleiter k\"onnen MAs ihrer Abt. Vorschl\"age unterbreiten &
+		Abteilungsleiter k\"onnen Mitarbeiter ihrer Abt. Vorschl\"age unterbreiten &
 		\\
 	\cline{1-4}
 		\textit{Urlaubsvorschlag \newline stornieren} &
 		Urlaubsvorschlag des Abteilungsleiter und Storno-Wunsch &
 		Stornierungsmitteilung und Aktualisierung der Urlaubsinformationen &
-		Abteilungsleiter k\"onnen MAs ihrer Abt. Vorschl\"age unterbreiten &
+		Abteilungsleiter k\"onnen Mitarbeitern ihrer Abt. Vorschl\"age unterbreiten &
 		\\
 	\hline
 \end{tabular}
@@ -172,10 +172,10 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Abteilungsleiter k\"onnen Mitarbeitern Urlaubsvorschl\"age unterbreiten &
 		\\
 	\cline{1-4}
-		\textit{Urlaubsinformationen der Abteilung an\-zeigen lassen} &
-		Wunsch des Abteilungsleiters nach Urlaubsinformationen seiner Abteilung &
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
+		Wunsch des Abteilungsleiters nach Urlaubsinformationen eines Mitarbeiters &
 		Detaillierte Informationen zur Abteilung &
-		Abteilungsleiter k\"onnen sich zur Entscheidungs\-unterst\"utzung die Urlaubs\-informationen ihrer Abteilung anzeigen lassen &
+		Abteilungsleiter k\"onnen sich zur Entscheidungs\-unterst\"utzung die Urlaubs\-informationen eines Mitarbeiters anzeigen lassen &
 		\\
 	\hline
 \end{tabular}
@@ -243,32 +243,201 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 \end{tabular}
 }
 
+\vspace{1cm}
+
 \subsection{Struktur der Eingangs- und Ausgangedaten}
-Todo: Tom
+Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die folgende Auflistung stellt die Struktur der entsprechenden Daten aller zuvor genannten essentiellen Funktionen dar.
+
+{
+\vspace{1cm}
+\hspace{-2cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+	\hline
+		\textbf{Funktion	} &	
+		\textbf{Struktur der Eingangsdaten} &
+		\textbf{Struktur der Ausgangsdaten} \\
+	\hline \hline
+		\textit{Betreten} &
+		+ MA-ID \newline + Uhrzeit &
+		Best\"atigung des Zutritts und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
+	\hline
+		\textit{Verlassen} &
+		+ MA-ID \newline + Uhrzeit &
+		Best\"atigung des Verlassen und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
+	\hline
+		\textit{Wachdienst \newline informieren} &
+		St\"undlicher Trigger zum Ausl\"osen der Benachrichtigung&
+		Detaillierte Mitarbeiterliste mit den Spalten \{MA-ID, Nachname, Vorname, B\"uro\} \\
+	\hline 
+\end{tabular}
+}
+
+\newpage
+% \thispagestyle{empty}
+{
+\hspace{-2cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+	\hline
+		\textbf{Funktion	} &	
+		\textbf{Struktur der Eingangsdaten} &
+		\textbf{Struktur der Ausgangsdaten} \\
+	\hline \hline		
+	\textit{Urlaub beantragen} &
+		Urlaubswunsch := \{MA-ID, Liste: zu beantragende Urlaubstage\}&
+		Urlaubsantrag := \{MA-ID, Nachname, Vorname, Liste: zu beantragende Urlaubstage\}\\
+	\hline
+		\textit{Urlaubsinformationen anzeigen} &
+		Wunsch nach Urlaubsinformationen &
+		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline		
+		\textit{Urlaubsantrag \newline stornieren} &
+		Urlaubsantrag s.o. (Status: offen / genehmigt und noch nicht angetreten).&
+		Best\"atigung der Stornierung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline
+		\textit{Urlaubsvorschlag \newline annehmen} &
+		Urlaubsvorschlag := \{MA-ID, Liste: vorgeschlagener Urlaubstage \}&
+		Best\"atigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline
+		\textit{Urlaubsvorschlag \newline stornieren} &
+		Urlaubsvorschlag s.o.&
+		Best\"atigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline 
+	\hline
+		\textit{Urlaubsantrag \newline genehmigen} &
+		Urlaubsantrag s.o. &
+		Best\"atigung der Genehmigung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline
+		\textit{Urlaubsantrag \newline ablehnen} &
+		Urlaubsantrag s.o. &
+		Best\"atigung der Ablehnung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline
+		\textit{Urlaubsvorschlag \newline unterbreiten} &
+		Wunsch einen Vorschlag zu unterbreiten oder konkreter Urlaubsantrag s.o.&
+		Urlaubsvorschlag := \{MA-ID, Nachname, Vorname, Liste: vorgeschlagener Urlaubstage\} und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
+		Wunsch nach Urlaubsinformationen &
+		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline 
+\end{tabular}
+}
+
+{
+\hspace{-2cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+	\hline
+		\textbf{Funktion	} &	
+		\textbf{Struktur der Eingangsdaten} &
+		\textbf{Struktur der Ausgangsdaten} \\
+	\hline \hline	
+		\textit{Krankmeldung erfassen} &
+		Krankenschein eines \newline Mitarbeiters := \{Nachname, Vorname, Geburtsdatum, Zeitraum der Bescheinigung\} &
+		Entsprechende Aktualisierung der Mitarbeiterdatens\"atze f\"ur Urlaubstage, Soll- und Ist-Arbeitszeit \\
+	\hline \hline
+		\textit{Anwesenheit \newline auswerten} &
+		Arbeitsstunden, Urlaubstage und Krankmeldungen des Mitarbeiters&
+		Detaillierte Arbeitszeitauswertung :=\{Soll-Arbeitszeit, Ist-Arbeitszeit, Stand des Arbeitszeitkontos \} \\
+	\hline \hline
+		\textit{Gesamtbilanz \newline anfordern} &
+		Wunsch nach Gesamtbilanz &
+		Gesamtbilanz zu Abteilung :=\{Sollarbeitszeit, tats\"achliche Arbeitsstunden, Urlaubstage, Krankheitstage, \"Uberstunden\}\\
+	\hline
+		\textit{Urlaubsbilanz \newline anfordern} &
+		Wunsch nach Urlaubsbilanz&
+		Urlaubsbilanz der Abteilung :=\{beantragte Urlaubstage (absolut und prozentual bezogen auf Gesamtarbeitszeit)\}\\
+	\hline
+		\textit{Anwesenheitsliste \newline anfordern} &
+		Wunsch nach Anwesenheitsliste &
+		Anwesenheitsliste der Abteilung :=\{MA-ID, Nachname, Vorname, Arbeitsplatz\} \\
+	\hline
+\end{tabular}
+}
+
+
+\newpage
 \section{Qualit\"atsanforderungen}
+Nachdem weder interne, noch externe Qualit\"atsanforderungen explizit in den vorliegenden Rahmenbedingungen genannt sind, lautet die Aufgabe hier globale Anforderungen zu formulieren und eigene Gedanken zu entwickeln. \newline
 
+Ein allgemeiner Punkt herausragender Bedeutung ist beispielsweise \newline \mbox{\textit{Datensicherheit und Integrit\"at}}. Aufgrund der Sensibilit\"at der zu verarbeitenden Daten und der mit ihnen verbundenen Business-Prozesse (e.g. Buchhaltung) ist unbedingt daf\"ur zu sorgen, dass jegliche Daten \textit{zugriffssicher,} \textit{redundant} und unter \textit{definierten Integrit\"atsbestimmungen} gespeichert und verarbeitet werden. \newline
+
+F\"ur die sp\"atere Erweiterung oder Wartung der Software ist es au{\ss}erdem von gro{\ss}er Bedeutung, alle Funktionen und Komponenten des Systems l\"uckenlos zu dokumentieren. \newline
+ 
+Geht man etwas ins Detail und betrachtet die essentiellen Funktionen, so gibt es Punkte an denen die Benutzerfreundlichkeit deutlich verbessert werden kann. Empfohlen w\"aren unter anderem \textit{Interaktionen mit der Software zu best\"atigen}. Gemeint ist damit, dem Benutzer R\"uckmeldung zu erfolgreich oder nicht erfolgreich abgeschlossenen Interaktionen zu geben. \newline
+
+Weitere vorstellbare Qualit\"atsanforderungen werden nach Bedarf mit dem Auftraggeber abgesprochen.
+
+\newpage
 \section{Rahmenbedingungen}
+Als abschlie{\ss}ender Punkt der schriftlichen Formulierung der Anforderungen werden die Rahmenbedingungen festgehalten. Hierbei unterscheidet man zwischen \textit{technologischen}, \textit{rechtlichen} und \textit{organisatorischen Rahmenbedingungen}. \newline
 
-\begin{itemize}
-	\item Arbeitstag  =  8 Stunden
-	\item Arbeitswoche = 40 Stunden
-	\item Das SW-System hat Zugriff auf den betriebsinternen Kalender
-	\item Krankmeldungen korrigieren die Urlaubsinformationen automatisch
-	\item Das Arbeitszeitkonto von Begin des Arbeitsverh\"altnisses an kumulativ gef\"uhrt 
-\end{itemize}
+Zu den \textit{technischen Rahmenbedingungen} geh\"ort dabei, dass das System Zugriff auf den betriebsinternen Jahreskalender ben\"otigt. Dies ist notwendig, um Feiertage und Betriebsruhetage automatisch in die Bilanz der Arbeitszeit\-konten einbeziehen zu k\"onnen. Weiterhin sollen Urlaubstage und Krankmeldungen unmittelbar in die Bilanz einflie{\ss}en.  \newline
+
+Wichtigster Teil der \textit{rechtlichen Rahmenbedingungen} ist zweifelsohne das Thema Datensicherheit. Die Vollst\"andigkeit und Integrit\"at der personenbezogenen Daten muss zu jedem Zeitpunkt gew\"ahrleistet sein. Dies ist notwendig um Rechtssicherheit zu schaffen, f\"ur den Arbeitgeber und den Arbeitnehmer.  \newline
+
+Die \textit{organisatorischen Rahmenbedingungen} beinhalten vor allem Details zu den Arbeitszeitmodellen im Unternehmen. So besitzt ein Standard-Arbeitstag 8 Stunden und eine Arbeitswoche dementsprechenden 40 Stunden. Das Arbeitszeitkonto eines jeden Mitarbeiters wird dabei vom Beginn des Arbeitsverh\"altnisses an kumulativ gef\"uhrt.  
+
+\newpage
 
 \chapter{Kontextdiagramm}
-Todo: Markus
+Nach der ausf\"uhrlichen Formulierung der Anforderungen folgt nun die Modellierung des SW-Systems. In einer ersten Abstraktion zeigt Abbildung \ref{Kontext} das entsprechenden \textit{Kontextdiagramm}.  Es zeigt des System und dessen Schnittstellen zur Umwelt, sowie die Beziehungen zwischen den Benutzern.
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\caption{Kontextdiagramm zum SW-System \textit{Arbeitszeiterfassung und Auswertung}. Der Akteur Mitarbeiter generalisiert die Akteure Abteilungsleiter und Sachbearbeiter Personal}
+	\label{Kontext}
+\end{figure}
+
 \chapter{Anwendungsfalldiagramme}
-Todo: Tom
+In einer weiteren Abstraktion werden die einzelnen Funktionen und ihre Kommunikationsbeziehungen zu den verschiedenen Akteuren dargestellt. Dabei handelt es sich nicht um Ablaufdiagramme, sondern um eine Modellierung des erwarteten Verhaltens der Software.
+
 \section{AWD der groben Funktionalität}
-Todo: Markus
+Abbildung \ref{AWD} zeigt die oberste Abstraktionsebene der Anwendungsfalldiagramme. Die enthaltenen \textit{abstrakten Funktionen} gruppieren dabei mehrere verwandte Anwendungsf\"alle.
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\caption{Dummy-Bild}
+	\label{AWD}
+\end{figure}
+
 \section{AWD der Funktionalität XY}
 Todo: Markus
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\caption{Dummy-Bild}
+	\label{essentielleFkt}
+\end{figure}
+
+
 \section{Detaillierte Beschreibung der essenziellen Funktionalität XY}
 Todo: Markus
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\caption{Dummy-Bild}
+	\label{Aktivitaet}
+\end{figure}
+
+
 \chapter{Zustandsdiagramm eines Urlaubsantrages}
-Todo: Leonard
+Todo: Markus
+
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{UML/Export/Urlaubsantrag.png}
+	\caption{Caption}
+	\label{Uantrag}
+\end{figure}
+
+
 \chapter{Entity Relationship Model}
 Todo: Leonard
 \chapter{Glossar}

@@ -61,7 +61,7 @@ Die folgende Auflistung enth\"alt die groben Funktionen, die vom Software-System
 
 \begin{itemize}
 	\item \textbf{Anwesenheit erfassen} \textit{\guillemotleft \ abstrakt \ \guillemotright}
-	\item \textbf{Urlaub planen - Mitarbeiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+	\item \textbf{Urlaub verwalten - Mitarbeiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
 	\item \textbf{Urlaub planen - Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
 	\item \textbf{Krankheitsdaten erfassen}
 	\item \textbf{Anwesenheit auswerten}
@@ -92,7 +92,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		\textit{Verlassen} & 
 		MA-ID und Uhrzeit & 
 		Verlassen und Speicherung der Zeit, alternative Fehlermeldung &
-		Bei einer ung\"ultigen MA-ID kann der Zutritt verweigert werden & 
+		& 
 		\\
 	\cline{1-4}
 		\textit{Wachdienst \mbox{informieren}} &
@@ -114,7 +114,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Urlaubswunsch & 
 		Urlaubsantrag & 
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt & 
-		\textbf{Urlaub \newline planen, \newline  Mitarbeiter } \\
+		\textbf{Urlaub \newline verwalten, \newline  Mitarbeiter } \\
 	\cline{1-4}
 		\textit{Urlaubsinformationen anzeigen} & 
 		Wunsch nach Urlaubsinformationen & 
@@ -172,10 +172,10 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Abteilungsleiter k\"onnen Mitarbeitern Urlaubsvorschl\"age unterbreiten &
 		\\
 	\cline{1-4}
-		\textit{Urlaubsinformationen der Abteilung an\-zeigen} &
-		Wunsch des Abteilungsleiters nach Urlaubsinformationen seiner Abteilung &
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
+		Wunsch des Abteilungsleiters nach Urlaubsinformationen eines Mitarbeiters &
 		Detaillierte Informationen zur Abteilung &
-		Abteilungsleiter k\"onnen sich zur Entscheidungs\-unterst\"utzung die Urlaubs\-informationen ihrer Abteilung anzeigen lassen &
+		Abteilungsleiter k\"onnen sich zur Entscheidungs\-unterst\"utzung die Urlaubs\-informationen eines Mitarbeiters anzeigen lassen &
 		\\
 	\hline
 \end{tabular}
@@ -243,11 +243,13 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 \end{tabular}
 }
 
+\vspace{1cm}
+
 \subsection{Struktur der Eingangs- und Ausgangedaten}
 Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die folgende Auflistung stellt die Struktur der entsprechenden Daten aller zuvor genannten essentiellen Funktionen dar.
 
 {
-\vspace{0.7cm}
+\vspace{1cm}
 \hspace{-2cm}
 \footnotesize
 \begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
@@ -272,9 +274,8 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 }
 
 \newpage
-\thispagestyle{empty}
+% \thispagestyle{empty}
 {
-\vspace{0.7cm}
 \hspace{-2cm}
 \footnotesize
 \begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
@@ -285,14 +286,14 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 	\hline \hline		
 	\textit{Urlaub beantragen} &
 		Urlaubswunsch := \{MA-ID, Liste: zu beantragende Urlaubstage\}&
-		Urlaubsantrag :-= \{MA-ID, Nachname, Vorname, Liste: zu beantragende Urlaubstage\}\\
+		Urlaubsantrag := \{MA-ID, Nachname, Vorname, Liste: zu beantragende Urlaubstage\}\\
 	\hline
 		\textit{Urlaubsinformationen anzeigen} &
 		Wunsch nach Urlaubsinformationen &
 		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline		
 		\textit{Urlaubsantrag \newline stornieren} &
-		Wunsch nach Antragsstornierung &
+		Urlaubsantrag s.o. (Status: offen / genehmigt und noch nicht angetreten).&
 		Best\"atigung der Stornierung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsvorschlag \newline annehmen} &
@@ -300,25 +301,38 @@ Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die fo
 		Best\"atigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsvorschlag \newline stornieren} &
-		&
-		\\
-	\hline \hline
+		Urlaubsvorschlag s.o.&
+		Best\"atigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline 
+	\hline
 		\textit{Urlaubsantrag \newline genehmigen} &
-		&
-		\\
+		Urlaubsantrag s.o. &
+		Best\"atigung der Genehmigung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsantrag \newline ablehnen} &
-		&
-		\\
+		Urlaubsantrag s.o. &
+		Best\"atigung der Ablehnung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
 		\textit{Urlaubsvorschlag \newline unterbreiten} &
-		&
-		\\
+		Wunsch einen Vorschlag zu unterbreiten oder konkreter Urlaubsantrag s.o.&
+		Urlaubsvorschlag := \{MA-ID, Nachname, Vorname, Liste: vorgeschlagener Urlaubstage\} und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
 	\hline
-		\textit{Urlaubsinformationen der Abteilung anzeigen} &
-		&
-		\\
-	\hline \hline
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
+		Wunsch nach Urlaubsinformationen &
+		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
+	\hline 
+\end{tabular}
+}
+
+{
+\hspace{-2cm}
+\footnotesize
+\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+	\hline
+		\textbf{Funktion	} &	
+		\textbf{Struktur der Eingangsdaten} &
+		\textbf{Struktur der Ausgangsdaten} \\
+	\hline \hline	
 		\textit{Krankmeldung erfassen} &
 		Krankenschein eines \newline Mitarbeiters := \{Nachname, Vorname, Geburtsdatum, Zeitraum der Bescheinigung\} &
 		Entsprechende Aktualisierung der Mitarbeiterdatens\"atze f\"ur Urlaubstage, Soll- und Ist-Arbeitszeit \\

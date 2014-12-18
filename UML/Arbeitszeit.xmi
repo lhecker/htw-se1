@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2014-12-18T17:08:19" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+<XMI verified="false" xmi.version="1.2" timestamp="2014-12-18T17:28:34" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
@@ -33,7 +33,7 @@
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams>
-       <diagram showopsig="1" linecolor="#00316e" snapx="5" showattribassocs="1" snapy="5" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="Urlaub einreichen" font="Helvetica,13,-1,5,50,0,0,0,0,0" canvasheight="906.75439453125" canvaswidth="807.7777777777778" localid="-1" snapcsgrid="1" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#e3ad00" zoom="100" xmi.id="KQyaScRcixGF" documentation="" showscope="1" snapgrid="1" showatts="1" type="6">
+       <diagram showopsig="1" linecolor="#00316e" snapx="5" showattribassocs="1" snapy="5" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="Urlaub einreichen" font="Helvetica,13,-1,5,50,0,0,0,0,0" canvasheight="906.75439453125" canvaswidth="877.7777777777778" localid="-1" snapcsgrid="1" showgrid="0" showops="1" griddotcolor="#d3d3d3" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#e3ad00" zoom="100" xmi.id="KQyaScRcixGF" documentation="" showscope="1" snapgrid="1" showatts="1" type="6">
         <widgets>
          <activitywidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-370" showstereotype="1" y="-135" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="7Ywb1TmEEdYU" width="15" isinstance="0" usefillcolor="1" fillcolor="#e3ad00" activityname="" xmi.id="O1sxCB0EekyG" postcondition="" documentation="" activitytype="0" height="15" precondition=""/>
          <activitywidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-240" showstereotype="1" y="-140" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="c61vJ7to2HyX" width="110" isinstance="0" usefillcolor="1" fillcolor="#e3ad00" activityname="Urlaubswunsch" xmi.id="cCLiNCwlNV7o" postcondition="" documentation="" activitytype="1" height="25" precondition=""/>
@@ -42,7 +42,6 @@
          <regionwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-495" showstereotype="1" y="-70" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="esKUXaExaFKv" width="610" isinstance="0" usefillcolor="1" fillcolor="#e3ad00" regionname="" xmi.id="8wclr8MOvPof" documentation="" height="100"/>
          <floatingtext linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-465" showstereotype="1" y="-30" text="Datenbank" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="vvlKnYS0H1BV" pretext="" role="700" width="75" isinstance="0" posttext="" usefillcolor="1" fillcolor="#e3ad00" xmi.id="hSlu6nSp0joc" height="20"/>
          <activitywidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-135" showstereotype="1" y="-20" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="OVzaWSV4OyUy" width="15" isinstance="0" usefillcolor="1" fillcolor="#e3ad00" activityname="" xmi.id="GvqZhBdSAVlN" postcondition="" documentation="" activitytype="2" height="15" precondition=""/>
-         <floatingtext linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-470" showstereotype="1" y="-140" text="Mitarbeiter" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="ipJpCKoNRVDx" pretext="" role="700" width="70" isinstance="0" posttext="" usefillcolor="1" fillcolor="#e3ad00" xmi.id="vZlcDvD1Cv2K" height="20"/>
          <regionwidget linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-495" showstereotype="1" y="-180" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="7lzEVMjh6Moo" width="610" isinstance="0" usefillcolor="1" fillcolor="#e3ad00" regionname="" xmi.id="46qkqoFtUeEr" documentation="" height="100"/>
          <floatingtext linecolor="none" usesdiagramfillcolor="0" linewidth="0" textcolor="#000000" usesdiagramusefillcolor="0" x="-470" showstereotype="1" y="-140" text="Mitarbeiter" font="Helvetica,13,-1,5,50,0,0,0,0,0" localid="XkB7q4mK4IsI" pretext="" role="700" width="70" isinstance="0" posttext="" usefillcolor="1" fillcolor="#e3ad00" xmi.id="retiPK6HII2U" height="20"/>
         </widgets>
@@ -693,7 +692,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="PrnkOQAuuPts" uniqueid="retiPK6HII2U" documentation=""/>
+  <docsettings viewid="KQyaScRcixGF" uniqueid="retiPK6HII2U" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component View"/>

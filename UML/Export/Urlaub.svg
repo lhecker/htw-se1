@@ -18,6 +18,29 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 >
 </g>
 
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
+font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#e3ad00" fill-opacity="1" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
+font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M214,25.5 C214,39.5833 166.094,51 107,51 C47.9055,51 0,39.5833 0,25.5 C0,11.4167 47.9055,0 107,0 C166.094,0 214,11.4167 214,25.5 "/>
+</g>
+
+<g fill="#e3ad00" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
+font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="38.3125" y="29.5469" font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
+ >Urlaub planen (Abs.)</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
+font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
+>
+</g>
+
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
 font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
 >
@@ -52,7 +75,7 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 <g fill="none" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
 font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
 >
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-660,-300 L-550,-300"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-600,-300 L-550,-300"/>
 </g>
 
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
@@ -120,7 +143,7 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 <g fill="none" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
 font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
 >
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-530,-170 L-660,-260"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-530,-170 L-600,-260"/>
 </g>
 
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
@@ -199,32 +222,6 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
 >
 <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-510,20 L-600,20"/>
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="none" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M-420,20 L-290,20"/>
 </g>
 
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,836.608,319.324)"
@@ -374,52 +371,6 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 >
 </g>
 
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="#e3ad00" fill-opacity="1" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
-font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
->
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M214,25.5 C214,39.5833 166.094,51 107,51 C47.9055,51 0,39.5833 0,25.5 C0,11.4167 47.9055,0 107,0 C166.094,0 214,11.4167 214,25.5 "/>
-</g>
-
-<g fill="#e3ad00" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
-font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
->
-<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="38.3125" y="29.5469" font-family="Helvetica" font-size="15" font-weight="400" font-style="italic" 
- >Urlaub planen (Abs.)</text>
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,20.8903,309.376)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,548.123,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
-<g fill="#e3ad00" fill-opacity="1" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,548.123,319.324)"
-font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
->
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M135,25.5 C135,39.5833 104.779,51 67.5,51 C30.2208,51 0,39.5833 0,25.5 C0,11.4167 30.2208,0 67.5,0 C104.779,0 135,11.4167 135,25.5 "/>
-</g>
-
-<g fill="#e3ad00" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,548.123,319.324)"
-font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
->
-<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="12.9531" y="29.5469" font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
- >Urlaub anzeigen</text>
-</g>
-
-<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,548.123,319.324)"
-font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
->
-</g>
-
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,597.862,150.211)"
 font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" font-style="normal" 
 >
@@ -474,14 +425,14 @@ font-family=".Helvetica Neue DeskInterface" font-size="13" font-weight="400" fon
 <g fill="#e3ad00" fill-opacity="1" stroke="#00316e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,0.994778,0.994778)"
 font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
 >
-<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M177,25.5 C177,39.5833 137.377,51 88.5,51 C39.6228,51 0,39.5833 0,25.5 C0,11.4167 39.6228,0 88.5,0 C137.377,0 177,11.4167 177,25.5 "/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M234,25.5 C234,39.5833 181.617,51 117,51 C52.3827,51 0,39.5833 0,25.5 C0,11.4167 52.3827,0 117,0 C181.617,0 234,11.4167 234,25.5 "/>
 </g>
 
 <g fill="#e3ad00" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,0.994778,0.994778)"
 font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
 >
-<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="10.6406" y="29.5469" font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
- >Urlaubsbilanz anzeigen</text>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="13.3438" y="29.5469" font-family="Helvetica" font-size="15" font-weight="400" font-style="normal" 
+ >Urlaubsinformationen anzeigen</text>
 </g>
 
 <g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.994778,0,0,0.994778,0.994778,0.994778)"

@@ -61,8 +61,8 @@ Die folgende Auflistung enth\"alt die groben Funktionen, die vom Software-System
 
 \begin{itemize}
 	\item \textbf{Anwesenheit erfassen} \textit{\guillemotleft \ abstrakt \ \guillemotright}
-	\item \textbf{Urlaub verwalten - Mitarbeiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
-	\item \textbf{Urlaub planen - Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+	\item \textbf{Urlaub planen - Mitarbeiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
+	\item \textbf{Urlaub verwalten - Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
 	\item \textbf{Krankheitsdaten erfassen}
 	\item \textbf{Anwesenheit auswerten}
 	\item \textbf{Zeitauswertung f\"ur Abteilungsleiter} \textit{\guillemotleft \ abstrakt \ \guillemotright}
@@ -114,7 +114,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Urlaubswunsch & 
 		Urlaubsantrag & 
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt & 
-		\textbf{Urlaub \newline verwalten, \newline  Mitarbeiter } \\
+		\textbf{Urlaub \newline planen, \newline  Mitarbeiter } \\
 	\cline{1-4}
 		\textit{Urlaubsinformationen anzeigen} & 
 		Wunsch nach Urlaubsinformationen & 
@@ -158,7 +158,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabh\"angigen funktionalen A
 		Urlaubsantrag eines MA &
 		Aktualisierung der Urlaubsdaten und Best\"atigung &
 		Abteilungsleiter m\"ussen Antr\"age ihrer Mitarbeiter genehmigen &
-		\textbf{Urlaub \newline planen, \newline  Abt.-Leiter } \\
+		\textbf{Urlaub \newline verwalten, \newline  Abt.-Leiter } \\
 	\cline{1-4}
 		\textit{Urlaubsantrag \newline ablehnen} &
 		Urlaubsantrag eines MA &
@@ -392,43 +392,54 @@ Nach der ausf\"uhrlichen Formulierung der Anforderungen folgt nun die Modellieru
 \end{figure}
 
 \chapter{Anwendungsfalldiagramme}
-In einer weiteren Abstraktion werden die einzelnen Funktionen und ihre Kommunikationsbeziehungen zu den verschiedenen Akteuren dargestellt. Dabei handelt es sich nicht um Ablaufdiagramme, sondern um eine Modellierung des erwarteten Verhaltens der Software.
+In einer weiteren Abstraktion werden die einzelnen Funktionen und ihre Kommunikationsbeziehungen zu den verschiedenen Akteuren dargestellt. 
 
 \section{AWD der groben Funktionalität}
-Abbildung \ref{AWD} zeigt die oberste Abstraktionsebene der Anwendungsfalldiagramme. Die enthaltenen \textit{abstrakten Funktionen} gruppieren dabei mehrere verwandte Anwendungsf\"alle.
+Abbildung \ref{AWD} zeigt die oberste Abstraktionsebene der Anwendungsfalldiagramme. Die enthaltenen \textit{abstrakten Funktionen} Kapseln dabei mehrere verwandte Anwendungsf\"alle.
 
 \begin{figure}[hbp]
 	\centering
-	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
-	\caption{Dummy-Bild}
+	\includegraphics[width=0.6\linewidth]{UML/Export/Kontext.png}
+	\caption{Anwendungsfalldiagramm zur groben \"Ubersicht.}
 	\label{AWD}
 \end{figure}
 
-\section{AWD der Funktionalität XY}
-Todo: Markus
+\newpage
 
+\section{AWD der Funktionalität \textit{Urlaub planen}}
+Beispielhaft wird nun die abstrakte Funktion \textit{Urlaub planen} n\"aher betrachtet. Abbildung \ref{Urlaubplanen} zeigt das entsprechende AWD.
+ 
 \begin{figure}[hbp]
 	\centering
-	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\includegraphics[width=\linewidth]{UML/Export/Urlaub_planen.png}
 	\caption{Dummy-Bild}
-	\label{essentielleFkt}
+	\label{Urlaubplanen}
 \end{figure}
 
+\newpage
 
-\section{Detaillierte Beschreibung der essenziellen Funktionalität XY}
-Todo: Markus
+\section{Detaillierte Beschreibung der essentiellen Funktionalität \textit{Urlaub beantragen}}
+Die essentielle Funktion \textit{Urlaub beantragen} geh\"ort zu den kleinsten von anderen unabh\"angigen Anwendungsf\"allen. Beschreiben kann man sie wie folgt: \newline 
 
+Der Mitarbeiter verfasst seinen Urlaubsantrag, basierend auf seinen aktuellen Urlaubsinformationen. Der Antrag enth\"alt die Daten MA-ID, Nachname, Vorname und eine Liste der zu beantragenden Urlaubstage. \newline 
+
+Nach \textsc{Chris Rupp} beschreibt man den Anwendungsfall unter Zuhilfenahme von Schatzschablonen folgenderma{\ss}en: \newline
+
+\textit{SW-System ``Arbeitszeit erfassen und auswerten`` muss dem Mitarbeiter die Möglichkeit bieten Urlaub einzureichen.}
+
+\newpage
+
+Aktivit\"atsdiagramm zur essentiellen Funktion. Ist das wirklich korrekt? Werden hier nicht mehrere AWD zusammengefasst?
 \begin{figure}[hbp]
 	\centering
-	\includegraphics[width=0.9\linewidth]{UML/Export/Kontext.png}
+	\includegraphics[width=0.6\linewidth]{UML/Export/Urlaub_einreichen.png}
 	\caption{Dummy-Bild}
 	\label{Aktivitaet}
 \end{figure}
 
 
 \chapter{Zustandsdiagramm eines Urlaubsantrages}
-Todo: Markus
-
+Ist das so korrekt?
 
 \begin{figure}[hbp]
 	\centering
@@ -437,9 +448,24 @@ Todo: Markus
 	\label{Uantrag}
 \end{figure}
 
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=1\linewidth]{UML/Export/Zustandsdiagramm.png}
+	\caption{Caption}
+	\label{Uantrag2}
+\end{figure}
+
 
 \chapter{Entity Relationship Model}
-Todo: Leonard
+ERM etc.
+
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=1\linewidth]{UML/Export/erm.png}
+	\caption{Caption}
+	\label{ERM}
+\end{figure}
+
 \chapter{Glossar}
 Todo: Tom und Markus und Leonard 
 

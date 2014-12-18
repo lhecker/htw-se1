@@ -397,9 +397,10 @@ In einer weiteren Abstraktion werden die einzelnen Funktionen und ihre Kommunika
 \section{AWD der groben Funktionalität}
 Abbildung \ref{AWD} zeigt die oberste Abstraktionsebene der Anwendungsfalldiagramme. Die enthaltenen \textit{abstrakten Funktionen} Kapseln dabei mehrere verwandte Anwendungsf\"alle.
 
+\vspace{1cm}
 \begin{figure}[hbp]
 	\centering
-	\includegraphics[width=0.6\linewidth]{UML/Export/Kontext.png}
+	\includegraphics[width=\linewidth]{UML/Export/Grob.png}
 	\caption{Anwendungsfalldiagramm zur groben \"Ubersicht.}
 	\label{AWD}
 \end{figure}
@@ -407,12 +408,13 @@ Abbildung \ref{AWD} zeigt die oberste Abstraktionsebene der Anwendungsfalldiagra
 \newpage
 
 \section{AWD der Funktionalität \textit{Urlaub planen}}
-Beispielhaft wird nun die abstrakte Funktion \textit{Urlaub planen} n\"aher betrachtet. Abbildung \ref{Urlaubplanen} zeigt das entsprechende AWD.
- 
+Beispielhaft wird nun die abstrakte Funktion \textit{Urlaub planen} n\"aher betrachtet. Abbildung \ref{Urlaubplanen} zeigt das entsprechende AWD. Ein Mitarbeiter besitzt die M\"oglichkeiten Urlaub zu beantragen oder zu stornieren. Er kann weiterhin Urlaubsvorschl\"age seines Abteilungsleiters annehmen oder ebenfalls stornieren und seine pers\"\"onlichen Urlaubsinformationen anzeigen.  
+
+\vspace{1cm}
 \begin{figure}[hbp]
 	\centering
 	\includegraphics[width=\linewidth]{UML/Export/Urlaub_planen.png}
-	\caption{Dummy-Bild}
+	\caption{Anwendungsfalldiagramm zur abstrakten Funktion \textit{Urlaub planen - Mitarbeiter}}
 	\label{Urlaubplanen}
 \end{figure}
 
@@ -433,35 +435,30 @@ Eine weitere Detaillierte Form der Modellierung bietet das Aktivit\"atsdiagramm.
 \begin{figure}[hbp]
 	\centering
 	\includegraphics[width=0.6\linewidth]{UML/Export/Urlaubsantrag.png}
-	\caption{Dummy-Bild}
+	\caption{Dummy-Bild - TODO:Markus}
 	\label{Aktivitaet}
 \end{figure}
 
 \chapter{Zustandsdiagramm eines Urlaubsantrages}
-Ist das so korrekt?
+Der Anwendungsfall \textit{Urlaub planen} eines Mitarbeiters soll nun erneut detaillierter betrachtet werden. Dazu greifen wir das Objekt \textit{Urlaubsantrag} heraus und beschreiben es in einem Zustandsdiagramm genauer. Dieses Diagramm enth\"alt die verschiedenen Zust\"ande einer Betrachtungseinheit und beschreibt gleichzeitig die \"Uberg\"ange zwischen den Zust\"anden.  
 
+\vspace{1cm}
 \begin{figure}[hbp]
 	\centering
 	\includegraphics[width=0.9\linewidth]{UML/Export/Urlaubsantrag.png}
-	\caption{Caption}
+	\caption{Zustandsdiagramm des Objekts \textit{Urlaubsantrag}.}
 	\label{Uantrag}
 \end{figure}
 
-\begin{figure}[hbp]
-	\centering
-	\includegraphics[width=1\linewidth]{UML/Export/Zustandsdiagramm.png}
-	\caption{Caption}
-	\label{Uantrag2}
-\end{figure}
-
+\newpage
 
 \chapter{Entity Relationship Model}
-ERM etc.
+ERM etc. TODO: Leonard
 
 \begin{figure}[hbp]
 	\centering
 	\includegraphics[width=1\linewidth]{UML/Export/erm.png}
-	\caption{Caption}
+	\caption{TEST}
 	\label{ERM}
 \end{figure}
 

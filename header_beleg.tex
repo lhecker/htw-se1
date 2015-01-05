@@ -58,7 +58,6 @@
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
 
-
 % Zeilenabstand zwischen zwei Fußnoten:
 \footnotesep 9pt
 % Einrücken der Fußnoten:
@@ -101,35 +100,36 @@
 \usepackage{titletoc}
 
 \titlecontents{chapter}
-				[0pc]
-				{\addvspace{0.5pc}%
-				%\filouter}
-				}
-				{\sffamily\Large\thecontentslabel\quad\sffamily\Large}{}
-				{\titlerule*[0.75pc]{}\enskip\rmfamily\Large \contentspage}  % Wäre mit Seitenzahl 																					rechtsbündig
-				[\addvspace{.5pc}]
+	[0pc]
+	{
+		\addvspace{0.5pc}
+		%\filouter}
+	}
+	{\sffamily\Large\thecontentslabel\quad\sffamily\Large}{}
+	{\titlerule*[0.75pc]{}\enskip\rmfamily\Large \contentspage}  % Wäre mit Seitenzahl 																					rechtsbündig
+	[\addvspace{.5pc}]
 
 % Die Sectioneinträge:
 \titlecontents{section}
-[3.78em]
-{}
-{\rmfamily\contentslabel{2.3em}\rmfamily}
-{\hspace*{-2.3em}}
-{\titlerule*[0.75pc]{.}\enskip\contentspage}
-[\addvspace{.1em}]
+	[3.78em]
+	{}
+	{\rmfamily\contentslabel{2.3em}\rmfamily}
+	{\hspace*{-2.3em}}
+	{\titlerule*[0.75pc]{.}\enskip\contentspage}
+	[\addvspace{.1em}]
 
 % Die Subsectioneinträge:
 \titlecontents{subsection}
-[6.2em]
-{}
-{\rmfamily\contentslabel{2.3em}\rmfamily}
-{\hspace*{-2.3em}}
-{\titlerule*[0.75pc]{.}\enskip\contentspage}
-[\addvspace{.1em}]
+	[6.2em]
+	{}
+	{\rmfamily\contentslabel{2.3em}\rmfamily}
+	{\hspace*{-2.3em}}
+	{\titlerule*[0.75pc]{.}\enskip\contentspage}
+	[\addvspace{.1em}]
 
 %\titlecontents{subsection}
-%[6.8em]
-%{}
-%{\rmfamily\normalsize\contentslabel{3em}\rmfamily\large}
-%{\hspace*{-2.3em}}
-%{\titlerule*[0.75pc]{.}\enskip\contentspage}
+	%[6.8em]
+	%{}
+	%{\rmfamily\normalsize\contentslabel{3em}\rmfamily\large}
+	%{\hspace*{-2.3em}}
+	%{\titlerule*[0.75pc]{.}\enskip\contentspage}

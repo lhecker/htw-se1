@@ -85,7 +85,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 	\hline \hline
 		\textit{Betreten} &
 		MA-ID und Uhrzeit &
-		Best\"atigung der erfolgreichen Zeiterfassung &
+		Best\"atigung der erfolgreichen Zeiterfassung und Zutritt&
 		Bei einer ungültigen MA-ID kann der Zutritt verweigert werden &
 		\textbf{Anwesenheit erfassen} \\
 	\cline{1-4}
@@ -97,7 +97,7 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 	\cline{1-4}
 		\textit{Wachdienst \mbox{informieren}} &
 		&
-		Detaillierte Information an den Wachdienst &
+		Wachdienst-Informationen := \newline \{  &
 		Der Wachdienst wird zwischen 22:00 Uhr und 6:00 Uhr stündlich darüber informiert, welche Mitarbeiter sich im Gebäude befinden &
 		\\
 	\hline
@@ -118,61 +118,61 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 	\hline \hline
 		\textit{Urlaub beantragen} &
 		MA-ID und Datum &
-		Best\"atigung der Antragstellung &
+		\textit{Urlaubsinformationen \newline anzeigen} &
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt &
 		\textbf{Urlaub \newline planen, \newline Mitarbeiter } \\
 	\cline{1-4}
 		\textit{Urlaubsinformationen anzeigen} &
-		Wunsch nach Urlaubsinformationen &
-		Informationen zu Urlaubsterminen, Beantragungs\-status, verbrauchten und verbleibenden Urlaubstagen &
+		MA-ID und Wunsch nach Urlaubsinformationen &
+		Urlaubsinformationen := \newline \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\} &
 		&
 		\\
 	\cline{1-4}
 		\textit{Urlaubsantrag \newline stornieren} &
-		Storno-Wunsche &
-		Storno-Bestätigung mit Aktualisierung der Urlaubsdaten &
+		MA-ID und Storno-Wunsche &
+		\textit{Urlaubsinformationen \newline anzeigen} &
 		Mitarbeiter kann offene, abgelehnte und genehmigte (noch nicht angetretene) Urlaubsanträge stornieren &
 		\\
 	\cline{1-4}
 		\textit{Urlaubsvorschlag annehmen} &
 		Urlaubsvorschlag des Abteilungsleiter &
-		 Aktualisierung der Urlaubsinformationen &
+		 \textit{Urlaubsinformationen \newline anzeigen} &
 		Abteilungsleiter können Mitarbeiter ihrer Abt. Vorschläge unterbreiten &
 		\\
 	\cline{1-4}
 		\textit{Urlaubsvorschlag \newline stornieren} &
 		Urlaubsvorschlag des Abteilungsleiter und Storno-Wunsch &
-		Stornierungsmitteilung und Aktualisierung der Urlaubsinformationen &
+		\textit{Urlaubsinformationen \newline anzeigen} &
 		Abteilungsleiter können Mitarbeitern ihrer Abt. Vorschläge unterbreiten &
 		\\
 	\hline \hline
 		\textit{Urlaubsantrag \newline genehmigen} &
-		Urlaubsantrag eines MA &
-		Aktualisierung der Urlaubsdaten und Bestätigung &
+		MA-ID des Nutzers und MA-ID des Antragstellers &
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
 		Abteilungsleiter müssen Anträge ihrer Mitarbeiter genehmigen &
 		\textbf{Urlaub \newline verwalten, \newline Abt.-Leiter } \\
 	\cline{1-4}
 		\textit{Urlaubsantrag \newline ablehnen} &
-		Urlaubsantrag eines MA &
-		Aktualisierung der Urlaubsdaten und Absage&
+		MA-ID des Nutzers und MA-ID des Antragstellers &
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
 		Abteilungsleiter können Anträge ihrer Mitarbeiter ablehnen &
 		\\
 	\cline{1-4}
 		\textit{Vorschlag \newline unterbreiten} &
-		Urlaubsvorschlag des Abteilungsleiters &
-		Urlaubsvorschlag an Mitarbeiter und Aktualisierung der Urlaubsinformationen &
+		MA-ID des Nutzers, MA-ID des Antragstellers und \newline Datum &
+		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
 		Abteilungsleiter können Mitarbeitern Urlaubsvorschläge unterbreiten &
 		\\
 	\cline{1-4}
 		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
 		MA-ID &
-		Detaillierte Informationen zur Mitarbeiter &
+		Urlaubsinformationen := \newline \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\} &
 		Abteilungsleiter können sich zur Entscheidungs\-unterstützung die Urlaubs\-informationen eines Mitarbeiters anzeigen lassen &
 		\\
 	\cline{1-4}
 		\textit{Offene Urlaubsantr\"age der Abteilung anzeigen} &
 		&
-		Detaillierte Informationen zur Abteilung &
+		Urlaubsinformationen := \newline \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine mit Status=offen\}  &
 		&
 		\\
 	\hline
@@ -181,35 +181,6 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 
 {
 \vspace{0,5cm}
-\hspace{-3,5cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
-	\hline
-		\textit{Krankmeldung \newline erfassen} &
-		Krankenschein eines Mitarbeiters &
-		Aktualisierung der Urlaubsinformationen &
-		Sachbearbeiter (HR) erfasst Krankmeldungen von Mitarbeitern und betroffene Urlaubsinformationen werden sofort aktualisiert &
-		 \\
-	\hline
-\end{tabular}
-}
-
-{
-\vspace{0,5cm}
-\hspace{-3,5cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
-	\hline
-		\textit{Anwesenheit \newline auswerten} &
-		Anwesenheitsinformationen eines Mitarbeiters &
-		Detaillierte Arbeitszeit\-aus\-wertung des Mitarbeiters &
-		Die Auswertung wird wöchentlich automatisch erstellt und dem Mitarbeiter per Email zugesandt &
-		 \\
-	\hline
-\end{tabular}
-}
-
-{
 \hspace{-3,5cm}
 \footnotesize
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
@@ -220,15 +191,27 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 		\textbf{Bemerkungen}	&
 		\textbf{abstrakter AWD} \\
 	\hline \hline
+		\textit{Krankmeldung \newline erfassen} &
+		Krankenschein eines Mitarbeiters &
+		Best\"atigung der Erfassung des KKS &
+		Sachbearbeiter (HR) erfasst Krankmeldungen von Mitarbeitern und betroffene Urlaubsinformationen werden sofort aktualisiert &
+		 \\
+	\hline \hline
+		\textit{Anwesenheit \newline auswerten} &
+		MA-ID &
+		Detaillierte Arbeitszeit\-aus\-wertung des Mitarbeiters := \newline \{Pflichtarbeitsstunden, tats\"achliche Arbeitsstunden, Stand des Arbeitszeitkontos\}&
+		Die Auswertung wird wöchentlich automatisch erstellt und dem Mitarbeiter per Email zugesandt &
+		 \\
+	\hline \hline
 		\textit{Gesamtbilanz \newline anfordern} &
-		Wunsch nach Gesamtbilanz &
-		Gesamtbilanz enthält detaillierte Informationen zur Arbeits\-zeit\-auswertung der Abteilung &
+		Wunsch nach Gesamtbilanz der Abteilung &
+		Gesamtbilanz := \newline \{Sollarbeitszeit, Istarbeitszeit, Urlaubstage, Krankheitstage, \"Uberstunden\} (Jeweils absolut und prozentual bezogen auf die Sollarbeitszeit)  &
 		Die Kennzahlen sind absolut und prozentual angegeben und betreffen einen beliebigen, abgelaufenen Zeitraum &
 		\textbf{Zeitaus\-wertung für Abt.-Leiter}\\
 	\cline{1-4}
 		\textit{Urlaubszeitbilanz \newline anfordern} &
-		Wunsch nach Urlaubsbilanz &
-		Urlaubszeitbilanz enteält beantragte Urlaubstage der Abteilung in einem vorausschauenden Zeitraum &
+		Wunsch nach Urlaubsbilanz der Abteilung und Zeitraum&
+		Urlaubszeitbilanz := \newline \{ beantragte Urlaubstage \"uber gegebenem Zeitraum\} (absolut und prozentual bezogen auf Sollarbeitszeit)&
 		Anträge werden absolut und prozentual bezogen auf die Gesamtarbeitszeit dargestellt &
 		\\
 	\cline{1-4}
@@ -243,119 +226,8 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 
 \vspace{1cm}
 
-\subsection{Struktur der Eingangs- und Ausgangedaten}
-Jede essentielle Funktion besitzt definierte Eingangs- und Ausgangsdaten. Die folgende Auflistung stellt die Struktur der entsprechenden Daten aller zuvor genannten essentiellen Funktionen dar.
-
-{
-\vspace{1cm}
-\hspace{-2cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
-	\hline
-		\textbf{Funktion	} &
-		\textbf{Struktur der Eingangsdaten} &
-		\textbf{Struktur der Ausgangsdaten} \\
-	\hline \hline
-		\textit{Betreten} &
-		+ MA-ID \newline + Uhrzeit &
-		Bestätigung des Zutritts und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
-	\hline
-		\textit{Verlassen} &
-		+ MA-ID \newline + Uhrzeit &
-		Bestätigung des Verlassen und \newline Datensatz :=\{MA-ID, Uhrzeit\}, \newline alternativ Fehlermeldung \\
-	\hline
-		\textit{Wachdienst \newline informieren} &
-		Stündlicher Trigger zum Auslösen der Benachrichtigung&
-		Detaillierte Mitarbeiterliste mit den Spalten \{MA-ID, Nachname, Vorname, Büro\} \\
-	\hline
-\end{tabular}
-}
-
 \newpage
-% \thispagestyle{empty}
-{
-\hspace{-2cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
-	\hline
-		\textbf{Funktion	} &
-		\textbf{Struktur der Eingangsdaten} &
-		\textbf{Struktur der Ausgangsdaten} \\
-	\hline \hline
-	\textit{Urlaub beantragen} &
-		Urlaubswunsch := \{MA-ID, Liste: zu beantragende Urlaubstage\}&
-		Urlaubsantrag := \{MA-ID, Nachname, Vorname, Liste: zu beantragende Urlaubstage\}\\
-	\hline
-		\textit{Urlaubsinformationen anzeigen} &
-		Wunsch nach Urlaubsinformationen &
-		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsantrag \newline stornieren} &
-		Urlaubsantrag s.o. (Status: offen / genehmigt und noch nicht angetreten).&
-		Bestätigung der Stornierung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsvorschlag \newline annehmen} &
-		Urlaubsvorschlag := \{MA-ID, Liste: vorgeschlagener Urlaubstage \}&
-		Bestätigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsvorschlag \newline stornieren} &
-		Urlaubsvorschlag s.o.&
-		Bestätigung des Urlaubsvorschlages und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-	\hline
-		\textit{Urlaubsantrag \newline genehmigen} &
-		Urlaubsantrag s.o. &
-		Bestätigung der Genehmigung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsantrag \newline ablehnen} &
-		Urlaubsantrag s.o. &
-		Bestätigung der Ablehnung und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsvorschlag \newline unterbreiten} &
-		Wunsch einen Vorschlag zu unterbreiten oder konkreter Urlaubsantrag s.o.&
-		Urlaubsvorschlag := \{MA-ID, Nachname, Vorname, Liste: vorgeschlagener Urlaubstage\} und aktualisierte Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
-		Wunsch nach Urlaubsinformationen &
-		Urlaubsinformationen := \{verbrauchte Urlaubstage, verbleibende Urlaubstage, Liste: Urlaubstermine inkl. Status (offen, genehmigt, abgelehnt\}\\
-	\hline
-\end{tabular}
-}
 
-{
-\hspace{-2cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
-	\hline
-		\textbf{Funktion	} &
-		\textbf{Struktur der Eingangsdaten} &
-		\textbf{Struktur der Ausgangsdaten} \\
-	\hline \hline
-		\textit{Krankmeldung erfassen} &
-		Krankenschein eines \newline Mitarbeiters := \{Nachname, Vorname, Geburtsdatum, Zeitraum der Bescheinigung\} &
-		Entsprechende Aktualisierung der Mitarbeiterdatensätze für Urlaubstage, Soll- und Ist-Arbeitszeit \\
-	\hline \hline
-		\textit{Anwesenheit \newline auswerten} &
-		Arbeitsstunden, Urlaubstage und Krankmeldungen des Mitarbeiters&
-		Detaillierte Arbeitszeitauswertung :=\{Soll-Arbeitszeit, Ist-Arbeitszeit, Stand des Arbeitszeitkontos \} \\
-	\hline \hline
-		\textit{Gesamtbilanz \newline anfordern} &
-		Wunsch nach Gesamtbilanz &
-		Gesamtbilanz zu Abteilung :=\{Sollarbeitszeit, tatsächliche Arbeitsstunden, Urlaubstage, Krankheitstage, überstunden\}\\
-	\hline
-		\textit{Urlaubsbilanz \newline anfordern} &
-		Wunsch nach Urlaubsbilanz&
-		Urlaubsbilanz der Abteilung :=\{beantragte Urlaubstage (absolut und prozentual bezogen auf Gesamtarbeitszeit)\}\\
-	\hline
-		\textit{Anwesenheitsliste \newline anfordern} &
-		Wunsch nach Anwesenheitsliste &
-		Anwesenheitsliste der Abteilung :=\{MA-ID, Nachname, Vorname, Arbeitsplatz\} \\
-	\hline
-\end{tabular}
-}
-
-
-\newpage
 \section{Qualitätsanforderungen}
 Nachdem weder interne, noch externe Qualitätsanforderungen explizit in den vorliegenden Rahmenbedingungen genannt sind, lautet die Aufgabe hier globale Anforderungen zu formulieren und eigene Gedanken zu entwickeln. \newline
 
@@ -477,7 +349,7 @@ Zuletzt existiert die Tabelle \textit{Urlaub} um Urlaubsanträge zu erfassen. Di
 \chapter{Glossar}
 Der abschlie{\ss}ende Glossar soll es Personen aus verschiedenen Fachgebieten möglich machen, die vorliegende Anforderungsanalyse zu verstehen und mit ihr arbeiten zu können. Dazu werden wichtige Fachbegriffe aus dem Kontext des Software Engineering und der Anforderungsanalyse beschrieben.
 
-\subsection{Allgemeiner Glossar}
+\section{Allgemeiner Glossar}
 \paragraph{Anwendungsfall}
 Eine abstrakte Darstellung einer vom Software-System angebotenen Funktionalität (Aktivität). Er kapselt eine Menge von Aktionen, die sequentiell, bediengungsabhängig oder zyklisch abgearbeitet werden. Ein Anwendungsfall wird in Folge von Dateneingaben oder zeitlichen Ereignissen ausgelöst und führt in der Regel zu einem von au{\ss}en sichtbarem Ergebnis.
 
@@ -488,7 +360,7 @@ Das Anwendungsfalldiagramm, kurz AWD, stellt die funktionalen Anforderungen (Akt
 Ein Akteur ist die abstrakte Darstellung einer externen Instanz, die mit dem System kommuniziert.
 
 
-\subsection{Projektbezogener Glossar}
+\section{Projektbezogener Glossar}
 \paragraph{Mitarbeiter-ID} Die eindeutige Kennung eines Mitarbeiters, hier eine 6-stellige alphanumerische Zeichenfolge
 
 \paragraph{Anwesenheit} Die Zeitspanne zwischen dem Ankommen des Mitarbeiters am Arbeitsplatz und seinem Verlassen dessen.

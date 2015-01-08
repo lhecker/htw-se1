@@ -85,20 +85,20 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 	\hline \hline
 		\textit{Betreten} &
 		MA-ID und Uhrzeit &
-		Zutritt und Speicherung der Zeit, alternativ Zutrittsverweigerung &
+		Best\"atigung der erfolgreichen Zeiterfassung &
 		Bei einer ungültigen MA-ID kann der Zutritt verweigert werden &
 		\textbf{Anwesenheit erfassen} \\
 	\cline{1-4}
 		\textit{Verlassen} &
 		MA-ID und Uhrzeit &
-		Verlassen und Speicherung der Zeit, alternative Fehlermeldung &
+		Best\"atigung der erfolgreichen Zeiterfassung  &
 		&
 		\\
 	\cline{1-4}
 		\textit{Wachdienst \mbox{informieren}} &
-		Mitarbeiterliste &
+		&
 		Detaillierte Information an den Wachdienst &
-		Der Wachdienst wird stündlich darüber informiert, welche Mitarbeiter sich im Gebäude befinden &
+		Der Wachdienst wird zwischen 22:00 Uhr und 6:00 Uhr stündlich darüber informiert, welche Mitarbeiter sich im Gebäude befinden &
 		\\
 	\hline
 \end{tabular}
@@ -110,9 +110,15 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 \footnotesize
 \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
 	\hline
+		\textbf{Funktion	} &
+		\textbf{Eingangsdaten} &
+		\textbf{Ausgangsdaten}&
+		\textbf{Bemerkungen}	&
+		\textbf{abstrakter AWD} \\
+	\hline \hline
 		\textit{Urlaub beantragen} &
-		Urlaubswunsch &
-		Urlaubsantrag &
+		MA-ID und Datum &
+		Best\"atigung der Antragstellung &
 		Urlaub wird unter Verwendung der eigenen MA-ID beim jeweiligen Abteilungsleiter beantragt &
 		\textbf{Urlaub \newline planen, \newline Mitarbeiter } \\
 	\cline{1-4}
@@ -139,20 +145,6 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 		Stornierungsmitteilung und Aktualisierung der Urlaubsinformationen &
 		Abteilungsleiter können Mitarbeitern ihrer Abt. Vorschläge unterbreiten &
 		\\
-	\hline
-\end{tabular}
-}
-
-{
-\hspace{-3,5cm}
-\footnotesize
-\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|p{2cm}|}
-	\hline
-		\textbf{Funktion	} &
-		\textbf{Eingangsdaten} &
-		\textbf{Ausgangsdaten}&
-		\textbf{Bemerkungen}	&
-		\textbf{abstrakter AWD} \\
 	\hline \hline
 		\textit{Urlaubsantrag \newline genehmigen} &
 		Urlaubsantrag eines MA &
@@ -173,9 +165,15 @@ Die folgenden Tabellen fassen nun alle voneinander unabhängigen funktionalen An
 		\\
 	\cline{1-4}
 		\textit{Urlaubsinformationen eines Mitarbeiters an\-zeigen} &
-		Wunsch des Abteilungsleiters nach Urlaubsinformationen eines Mitarbeiters &
-		Detaillierte Informationen zur Abteilung &
+		MA-ID &
+		Detaillierte Informationen zur Mitarbeiter &
 		Abteilungsleiter können sich zur Entscheidungs\-unterstützung die Urlaubs\-informationen eines Mitarbeiters anzeigen lassen &
+		\\
+	\cline{1-4}
+		\textit{Offene Urlaubsantr\"age der Abteilung anzeigen} &
+		&
+		Detaillierte Informationen zur Abteilung &
+		&
 		\\
 	\hline
 \end{tabular}
@@ -479,6 +477,7 @@ Zuletzt existiert die Tabelle \textit{Urlaub} um Urlaubsanträge zu erfassen. Di
 \chapter{Glossar}
 Der abschlie{\ss}ende Glossar soll es Personen aus verschiedenen Fachgebieten möglich machen, die vorliegende Anforderungsanalyse zu verstehen und mit ihr arbeiten zu können. Dazu werden wichtige Fachbegriffe aus dem Kontext des Software Engineering und der Anforderungsanalyse beschrieben.
 
+\subsection{Allgemeiner Glossar}
 \paragraph{Anwendungsfall}
 Eine abstrakte Darstellung einer vom Software-System angebotenen Funktionalität (Aktivität). Er kapselt eine Menge von Aktionen, die sequentiell, bediengungsabhängig oder zyklisch abgearbeitet werden. Ein Anwendungsfall wird in Folge von Dateneingaben oder zeitlichen Ereignissen ausgelöst und führt in der Regel zu einem von au{\ss}en sichtbarem Ergebnis.
 
@@ -488,9 +487,11 @@ Das Anwendungsfalldiagramm, kurz AWD, stellt die funktionalen Anforderungen (Akt
 \paragraph{Akteur}
 Ein Akteur ist die abstrakte Darstellung einer externen Instanz, die mit dem System kommuniziert.
 
+
+\subsection{Projektbezogener Glossar}
 \paragraph{Mitarbeiter-ID} Die eindeutige Kennung eines Mitarbeiters, hier eine 6-stellige alphanumerische Zeichenfolge
 
-\paragraph{Abwesenheit} Urlaub und Krankheitstage eines Mitarbeiters.
+\paragraph{Anwesenheit} Die Zeitspanne zwischen dem Ankommen des Mitarbeiters am Arbeitsplatz und seinem Verlassen dessen.
 
 
 
